@@ -3,7 +3,11 @@ class Api::UsersController < ApplicationController
         @existing_user = User.where(username: params[:username])
         puts @existing_user
         render json: @existing_user
-    end   
+    end 
+    def show
+        @user = User.find(params[:id])
+        render json: @user
+    end 
     def create
         @user = User.create! (user_params)
         render json: @user

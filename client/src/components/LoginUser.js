@@ -4,7 +4,7 @@ import { Form } from './styled-components/Form'
 
 class Login extends Component {
     state = {
-        email: '',
+        username: '',
         password: ''
     }
 
@@ -12,15 +12,19 @@ class Login extends Component {
         this.setState({ [event.target.name]: event.target.value })
         event.preventDefault()
     }
+    handleLogin = (event) => {
+      event.preventDefault()
+      this.props.loginUser(this.state.username)
+    }
 
     render(){
         return(
             <Container>
                 <div><p> Welcome Back </p>
-                <Form onSubmit={() => this.login()}>
+                <Form onSubmit={this.handleLogin}>
                     <input 
                         type="string"
-                        name="email"
+                        name="username"
                         placeholder="Email"
                         onChange={this.handleChange}
                          />

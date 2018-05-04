@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SignUp from './components/SignUp'
-import Login from './components/Login'
+import LoginUser from './components/LoginUser'
 import Home from './components/Home'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
@@ -8,8 +8,21 @@ import axios from 'axios'
 class App extends Component {
   state = {
     currentUser: {},
-    signedIn: false
+    signedIn: false,
+    loggedIn: false
   }
+
+  loginUser = async(username)=>{
+    try{
+      const response = await axios.get(`/api/users/retrieve/${username}`)
+      this.setState({loggedIn: true, currentUser: response.data[0]})
+    }
+    catch(error){
+      console.log(error)
+    }
+    
+  }
+
   signUp = async(userInfo) => {
     console.log("Clicked Sign Up!")
       try{
@@ -24,14 +37,14 @@ class App extends Component {
   }
 
   render() {
-    const LoginComponent = () => (<Login />)
+    const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp signedIn={this.state.signedIn} signUp={this.signUp}/>)
     return (
     <Router>
       <div>
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route exact path="/login" render={LoginComponent}/>
+            <Route exact path="/login_user" render={LoginComponent}/>
             <Route exact path="/signup" render={SignUpComponent}/>
           </Switch>
       </div>

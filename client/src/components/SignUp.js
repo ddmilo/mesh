@@ -13,7 +13,8 @@ class SignUp extends Component {
         signedUp: false
     }
 
-    signUp = async() => {
+    signUp = (event) => {
+        event.preventDefault()
         const newUser = {
             name: this.state.name,
             username: this.state.username, 
@@ -34,7 +35,7 @@ class SignUp extends Component {
         return(
             <Container>
                 <div>
-                <Form onSubmit={() => this.signUp()}>
+                <Form onSubmit={this.signUp}>
                     <input 
                         type="string"
                         name="name"

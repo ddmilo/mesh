@@ -15,7 +15,7 @@ const Home = () => {
                     </RightDiv>
                     <LeftDiv>
                         <InfoText>See Friends Make calls Send messages Welcome back. Mesh. Login!</InfoText>
-                        <Button><Link to="/login">Login</Link></Button>
+                        <Button><Link to="/login_user">Login</Link></Button>
                     </LeftDiv>
                 </SquaresContainer>
             </HomeContainer>
