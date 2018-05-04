@@ -34,6 +34,7 @@ class SignUp extends Component {
     render(){
         return(
             <Container>
+                {this.state.image}
                 <div>
                 <Form onSubmit={this.signUp}>
                     <input 

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import SignUp from './components/SignUp'
 import LoginUser from './components/LoginUser'
 import Home from './components/Home'
+import ContactsList from './components/ContactsList'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 
@@ -24,11 +25,9 @@ class App extends Component {
   }
 
   signUp = async(userInfo) => {
-    console.log("Clicked Sign Up!")
       try{
             const response = await axios.post('/api/users', userInfo)
             const user = response.data
-            console.log(user)
             this.setState({signedIn: true, currentUser: user})
         }
         catch(error){
@@ -39,6 +38,8 @@ class App extends Component {
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp signedIn={this.state.signedIn} signUp={this.signUp}/>)
+    const ContactsComponent = () => (<ContactsList />)
+
     return (
     <Router>
       <div>
@@ -46,6 +47,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/login_user" render={LoginComponent}/>
             <Route exact path="/signup" render={SignUpComponent}/>
+            <Route exact path="/contacts" render={ContactsComponent}/>
           </Switch>
       </div>
     </Router>

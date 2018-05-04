@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from './styled-components/Containers'
 import { Form } from './styled-components/Form'
-
+import { Redirect } from 'react-router-dom'
 class Login extends Component {
     state = {
         username: '',
@@ -18,6 +18,11 @@ class Login extends Component {
     }
 
     render(){
+      if(this.props.loggedIn === true){
+        return(
+          <Redirect to="/contacts" />
+        )
+      }
         return(
             <Container>
                 <div><p> Welcome Back </p>
