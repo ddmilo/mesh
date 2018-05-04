@@ -119,6 +119,10 @@ export const HomeContainer = styled.div`
     width: 100vw;
     height: 100vh;
 `
+
+export const ContactName = styled.div`
+    width: 150px;
+`
 export default { Container, 
                  ContactContainer, 
                  ContactsContainer, 
@@ -129,4 +133,5 @@ export default { Container,
                  RightDiv,
                  LeftDiv,
                  Button,
-                 HomeContainer }
+                 HomeContainer,
+                 ContactName }
