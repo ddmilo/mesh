@@ -17,8 +17,7 @@ ninti = User.create!(
     email: 'ninti@test.com',
     phone: '1-478-461-6804',
     image: 'https://i.imgur.com/QKCVUFz.jpg?3',
-    password: 'august05',
-    password_confirmation: 'august05'
+    password: 'august05'
 )
 
 lula = User.create!(
@@ -27,8 +26,7 @@ lula = User.create!(
     email: 'lula@test.com',
     phone: '1-478-461-6804',
     image: 'https://i.imgur.com/WBXzxcm.jpg?1',
-    password: 'lula1234',
-    password_confirmation: 'lula1234'
+    password: 'lula1234'
 )
 
 joe = User.create!(
@@ -37,8 +35,7 @@ joe = User.create!(
     email: 'joe@test.com',
     phone: '+ 1 (478) 461-6804',
     image: 'https://i.imgur.com/Etaoghi.jpg?1',
-    password: 'joey1234',
-    password_confirmation: 'joey1234'
+    password: 'joey1234'
 )
 
 ninti.contacts.create!(
