@@ -7,13 +7,16 @@ import axios from 'axios'
 
 class App extends Component {
   state = {
+    currentUser: {},
     signedIn: false
   }
   signUp = async(userInfo) => {
     console.log("Clicked Sign Up!")
       try{
             const response = await axios.post('/api/users', userInfo)
-            this.setState({signedIn: true})
+            const user = response.data
+            console.log(user)
+            this.setState({signedIn: true, currentUser: user})
         }
         catch(error){
             alert("Sign Up failed. Please try again.")
@@ -22,7 +25,7 @@ class App extends Component {
 
   render() {
     const LoginComponent = () => (<Login />)
-    const SignUpComponent = () => (<SignUp />)
+    const SignUpComponent = () => (<SignUp signedIn={this.state.signedIn} signUp={this.signUp}/>)
     return (
     <Router>
       <div>

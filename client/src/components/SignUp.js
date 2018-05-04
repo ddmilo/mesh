@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Container } from './styled-components/Containers'
 import { Form } from './styled-components/Form'
-import { Redirect } from 'react-router-dom'
 
 class SignUp extends Component {
     state = {
@@ -12,6 +11,18 @@ class SignUp extends Component {
         email: '',
         password: '',
         signedUp: false
+    }
+
+    signUp = async() => {
+        const newUser = {
+            name: this.state.name,
+            username: this.state.username, 
+            phone: this.state.phone,
+            image: this.state.password_confirmation,
+            email: this.state.email, 
+            password: this.state.password
+        }
+        this.props.signUp(newUser)
     }
 
     handleChange = (event) => {
