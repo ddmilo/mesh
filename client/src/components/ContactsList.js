@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { Component } from 'react'
 
-const ContactsList = (props) => {
-    return(
-        <div>
-            Hello from ContactsList
-        </div>
-    )
+class ContactsList extends Component {
+    componentWillMount(){
+        this.props.getContacts()
+    }
+    render(){
+        console.log(this.props.contacts)
+        return(
+            <div>
+                Hello from ContactsList
+            </div>
+        )
+    }
 }
 export default ContactsList

@@ -9,8 +9,22 @@ import axios from 'axios'
 class App extends Component {
   state = {
     currentUser: {},
-    signedIn: false,
+    contacts: [],
     loggedIn: false
+  }
+ 
+  getContacts = async() => {
+    const user_id = this.state.currentUser.id
+    console.log(user_id)
+    try{
+      const response = await axios.get(`/api/users/${user_id}/contacts`)
+      const contacts = response.data
+      console.log(contacts)
+      this.setState({contacts})
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
   loginUser = async(username)=>{
@@ -28,7 +42,7 @@ class App extends Component {
       try{
             const response = await axios.post('/api/users', userInfo)
             const user = response.data
-            this.setState({signedIn: true, currentUser: user})
+            this.setState({loggedIn: true, currentUser: user})
         }
         catch(error){
             alert("Sign Up failed. Please try again.")
@@ -37,8 +51,8 @@ class App extends Component {
 
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
-    const SignUpComponent = () => (<SignUp signedIn={this.state.signedIn} signUp={this.signUp}/>)
-    const ContactsComponent = () => (<ContactsList />)
+    const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
+    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts}/>)
 
     return (
     <Router>

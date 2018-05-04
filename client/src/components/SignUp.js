@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Container } from './styled-components/Containers'
 import { Form } from './styled-components/Form'
-
+import { Redirect } from 'react-router-dom'
 class SignUp extends Component {
     state = {
         name: '',
@@ -32,9 +32,13 @@ class SignUp extends Component {
     }
 
     render(){
+        if(this.props.loggedIn === true){
+            return(
+              <Redirect to="/contacts" />
+            )
+          }
         return(
             <Container>
-                {this.state.image}
                 <div>
                 <Form onSubmit={this.signUp}>
                     <input 
