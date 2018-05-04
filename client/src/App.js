@@ -6,6 +6,19 @@ import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 
 class App extends Component {
+  state = {
+    signedIn: false
+  }
+  signUp = async(userInfo) => {
+    console.log("Clicked Sign Up!")
+      try{
+            const response = await axios.post('/api/users', userInfo)
+            this.setState({signedIn: true})
+        }
+        catch(error){
+            alert("Sign Up failed. Please try again.")
+        }
+  }
 
   render() {
     const LoginComponent = () => (<Login />)
