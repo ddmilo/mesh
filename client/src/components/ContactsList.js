@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from 'react'
 import Contact from './Contact'
 import Footer from './Footer'
-import { ContactsContainer } from './styled-components/Containers'
+import { ContactsContainer, ContactsWrapper } from './styled-components/Containers'
 import { NavBarWrapper } from './styled-components/NavBar'
 import { MeshImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
@@ -35,14 +35,15 @@ class ContactsList extends Component {
             <div>
                 {this.props.loggedIn ? 
                 <Fragment>
-                <NavBarWrapper>
-                
-                    <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
-                </NavBarWrapper>
-                <ContactsContainer>
-                {contactsList}
-                </ContactsContainer>
-                <Footer />
+                    <NavBarWrapper>
+                        <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
+                    </NavBarWrapper>
+                    <ContactsWrapper>
+                        <ContactsContainer>
+                        {contactsList}
+                        </ContactsContainer>
+                    </ContactsWrapper>
+                    <Footer />
                 </Fragment>
                  :
                     <Redirect to='/' />

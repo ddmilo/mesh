@@ -14,7 +14,7 @@ export const ContactsWrapper = Container.extend`
     flex-direction: row;
     display: flex;
     justify-content: space-around;
-    padding-top: 70px;
+    padding-top: 40px;
 `
 export const ContactsContainer = styled.div`
     background-color: #FDFEFF;
