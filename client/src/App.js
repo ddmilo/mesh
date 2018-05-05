@@ -50,16 +50,27 @@ class App extends Component {
       console.log(error)
     }
   }
-  createPost(event){
-    this.props.showPostForm()
-    event.preventDefault()
-    axios.post(`/api/cities/${this.state.city_id}/posts`, this.state.newPost)
-    .then((res) => { this.props.getPosts()})
-    .catch((error) => {console.log(error)}) 
+
+  signUp = async(userInfo) => {
+    try{
+          const response = await axios.post('/api/users', userInfo)
+          const user = response.data
+          this.setState({loggedIn: true, currentUser: user})
+      }
+      catch(error){
+          alert("Sign Up failed. Please try again.")
+      }
 }
-  newContact = async() => {
-    console.log("Called new contact in App.js")
-    // const contact = await axios.post(`/api/users/${user_id}/contacts`)
+  newContact = async(contactInfo) => {
+    try{
+      const user_id = this.state.currentUser.id
+      const response = await axios.post(`/api/users/${user_id}/contacts`, contactInfo)
+      console.log("APPJSNEWWCONTACT", response.data)
+      this.setState({newContactAdded: true})
+    }
+    catch(error){
+      console.log(error)
+    }
   }
 
 

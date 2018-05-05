@@ -19,7 +19,8 @@ class NewContact extends Component {
     }
 
     newContact = (event) => {
-        const contact = {
+        event.preventDefault()
+        const contactInfo = {
             user_id: this.props.userId,
             name: this.state.name,
             username: this.state.username,
@@ -34,8 +35,8 @@ class NewContact extends Component {
             city: this.state.city,
             zip: this.state.zip
         }
-        event.preventDefault()
-        this.props.newContact(contact)
+        console.log(contactInfo)
+        this.props.newContact(contactInfo)
         console.log("NewContact pushed")
     }
 
@@ -125,31 +126,31 @@ class NewContact extends Component {
                         <input type="radio" id="choice1"
                         name="relation" value="friend" onChange={this.handleChange}
                         />
-                        <label for="contactChoice1">Friend</label>
+                        <label htmlFor="contactChoice1">Friend</label>
 
                         <input type="radio" id="choice2"
                         name="relation" value="family" onChange={this.handleChange}/>
-                        <label for="contactChoice1">Family</label>
+                        <label htmlFor="contactChoice1">Family</label>
 
                         <input type="radio" id="choice3"
                         name="relation" value="date" onChange={this.handleChange}/>
-                        <label for="contactChoice1">Date</label>
+                        <label htmlFor="contactChoice1">Date</label>
 
                         <input type="radio" id="choice4"
                         name="relation" value="class" onChange={this.handleChange}/>
-                        <label for="contactChoice1">Class</label>
+                        <label htmlFor="contactChoice1">Class</label>
 
                         <input type="radio" id="choice5"
                         name="relation" value="job" onChange={this.handleChange}/>
-                        <label for="contactChoice1">Job</label>
+                        <label htmlFor="contactChoice1">Job</label>
 
                         <input type="radio" id="choice6"
                         name="relation" value="network" onChange={this.handleChange}/>
-                        <label for="contactChoice2">Network</label>
+                        <label htmlFor="contactChoice2">Network</label>
 
                         <input type="radio" id="choice7"
                         name="relation" value="other" onChange={this.handleChange}/>
-                        <label for="contactChoice3">Other</label>
+                        <label htmlFor="contactChoice3">Other</label>
                     </div>
                     <input className="input-button" type="submit" value="Add Contact" />
         </Form> </div>
