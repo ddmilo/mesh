@@ -3,6 +3,9 @@ import { ContactImage, SocialImage, CrudImage } from './styled-components/Images
 import { ContactContainer, ContactInfo, ContactName } from './styled-components/Containers'
 import { Link } from 'react-router-dom'
 const Contact = (props) => {
+    const deleteContact = () => {
+        console.log("clicked delete")
+    }
     return(
         <ContactContainer>
             <ContactInfo>
@@ -22,7 +25,7 @@ const Contact = (props) => {
             </div>
             <div>
                 <Link to='/edit_contact'><CrudImage src="https://i.imgur.com/wvOabn0.png"/></Link>
-                {/* <Link to='/'><CrudImage src="https://i.imgur.com/YcNLkpg.png"/></Link> */}
+                <CrudImage src="https://i.imgur.com/YcNLkpg.png" onClick={() => deleteContact()}/>
             </div>
         </ContactContainer>
     )
