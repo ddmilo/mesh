@@ -28,7 +28,7 @@ class ContactsList extends Component {
         }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
-            if (contact.name.indexOf(this.state.search) !== -1){
+            if (contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1){
                 return contact
             }
         })
