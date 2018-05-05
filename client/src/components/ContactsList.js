@@ -7,8 +7,16 @@ import { MeshImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
+    state = {
+        search: ''
+    }
     componentWillMount() {
         this.props.getContacts()
+    }
+    
+    handleChange = (event) => {
+        this.setState({ search: event.target.value })
+        event.preventDefault()
     }
 
     render() {
@@ -37,6 +45,9 @@ class ContactsList extends Component {
                 <Fragment>
                     <NavBarWrapper>
                         <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
+                        <input type='text' 
+                               placeholder='Search Contacts'
+                               onChange={this.handleChange}/>
                     </NavBarWrapper>
                     <ContactsWrapper>
                         <ContactsContainer>
