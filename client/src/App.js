@@ -85,13 +85,26 @@ class App extends Component {
 setCurrentContact = (contact) =>{
   this.setState({currentContact: contact})
 }
+updateContact = async(updatedContact) =>{
+  const currentContact = this.state.currentContact
+  const contactId = this.state.currentContact.id
+  const userId = this.state.currentUser.id
+  try {
+      await axios.patch(`/api/users/${userId}/contacts/${contactId}`, updatedContact, currentContact)
+      console.log("UPDATEIT")
+      this.setState({ redirect: true })
+  }
+  catch (err) {
+      console.log(err)
+  }
+}
 
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
     const ContactsComponent = () => (<ContactsList setCurrentContact = {this.setCurrentContact}redirect ={this.state.redirect} deleteContact={this.deleteContact} getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn} userId={this.state.currentUser.id}/>)
     const NewContactComponent = () => (<NewContact newContact={this.newContact} newContactAdded={this.state.newContactAdded} userId={this.state.currentUser.id}/>) 
-    const EditContactComponent = () => (<EditContact currentContact={this.state.currentContact}/>) 
+    const EditContactComponent = () => (<EditContact redirect={this.state.redirect} currentContact={this.state.currentContact} updateContact={this.updateContact}/>) 
     return (
     <Router>
       <div>

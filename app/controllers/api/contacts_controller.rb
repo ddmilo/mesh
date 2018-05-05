@@ -1,13 +1,18 @@
 class Api::ContactsController < ApplicationController
+    def create
+        @contact = Contact.create!(contact_params)
+        render json: @contact
+    end   
     def index
         @user = User.find(params[:user_id])
         @contacts = @user.contacts
         render json: @contacts
-    end
-    def create
-        @contact = Contact.create!(contact_params)
+    end 
+    def update
+        @contact = Contact.find(params[:id])
+        @contact.update!(contact_params)
         render json: @contact
-    end    
+    end
     def destroy
         @contact = Contact.find(params[:id]).delete
         render status: :ok

@@ -35,7 +35,7 @@ class EditContact extends Component {
             city: this.state.city,
             zip: this.state.zip
         }
-        this.props.editContact(contactInfo)
+        this.props.updateContact(contactInfo)
     }
 
     handleChange = (event) => {
@@ -44,8 +44,7 @@ class EditContact extends Component {
     }
 
     render(){
-        console.log("HELLO", this.props.currentContact)
-        if(this.props.editContactAdded === true){
+        if(this.props.redirect === true){
             return(
               <Redirect to="/contacts" />
             )
