@@ -48,7 +48,7 @@ class EditContact extends Component {
             return(
               <Redirect to="/contacts" />
             )
-          }
+        }
         return(
             <Container>
                 <div>
