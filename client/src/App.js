@@ -39,11 +39,9 @@ class App extends Component {
 
   getContacts = async() => {
     const user_id = this.state.currentUser.id
-    console.log(user_id)
     try{
       const response = await axios.get(`/api/users/${user_id}/contacts`)
       const contacts = response.data
-      console.log(contacts)
       this.setState({contacts})
     }
     catch(error){
@@ -65,7 +63,6 @@ class App extends Component {
     try{
       const user_id = this.state.currentUser.id
       const response = await axios.post(`/api/users/${user_id}/contacts`, contactInfo)
-      console.log("APPJSNEWWCONTACT", response.data)
       this.setState({newContactAdded: true})
     }
     catch(error){

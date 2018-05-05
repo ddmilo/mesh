@@ -19,9 +19,15 @@ export const NewContactImage = styled.img`
     height: 60px;
     margin: 10px;
 `
+export const CrudImage = styled.img`
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+`
 
 export default { MeshImage,
                  SocialImage,
                  ContactImage,
-                 NewContactImage
+                 NewContactImage,
+                 CrudImage
                 }

@@ -127,6 +127,8 @@ export const FooterContainer = styled.div`
     width: 100vw;
     display: flex;
     justify-content: flex-end;
+    background-color: #FDFEFF;
+
 `
 export default { Container, 
                  ContactContainer, 

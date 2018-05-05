@@ -35,9 +35,7 @@ class NewContact extends Component {
             city: this.state.city,
             zip: this.state.zip
         }
-        console.log(contactInfo)
         this.props.newContact(contactInfo)
-        console.log("NewContact pushed")
     }
 
     handleChange = (event) => {
