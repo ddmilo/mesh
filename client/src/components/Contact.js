@@ -21,8 +21,8 @@ const Contact = (props) => {
                 <a href={`https://www.facebook.com/${props.contact.facebook}`} target="_blank"><SocialImage src="https://i.imgur.com/8Ew6ev1.png"/></a>
             </div>
             <div>
-                <Link to='/'><CrudImage src="https://i.imgur.com/wvOabn0.png"/></Link>
-                <Link to='/'><CrudImage src="https://i.imgur.com/YcNLkpg.png"/></Link>
+                <Link to='/edit_contact'><CrudImage src="https://i.imgur.com/wvOabn0.png"/></Link>
+                {/* <Link to='/'><CrudImage src="https://i.imgur.com/YcNLkpg.png"/></Link> */}
             </div>
         </ContactContainer>
     )

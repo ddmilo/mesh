@@ -4,6 +4,7 @@ import LoginUser from './components/LoginUser'
 import Home from './components/Home'
 import ContactsList from './components/ContactsList'
 import NewContact from './components/NewContact'
+import EditContact from './components/EditContact'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 
@@ -76,6 +77,7 @@ class App extends Component {
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
     const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn}/>)
     const NewContactComponent = () => (<NewContact newContact={this.newContact} newContactAdded={this.state.newContactAdded} userId={this.state.currentUser.id}/>) 
+    const EditContactComponent = () => (<EditContact />) 
     return (
     <Router>
       <div>
@@ -85,6 +87,7 @@ class App extends Component {
             <Route exact path="/signup" render={SignUpComponent}/>
             <Route exact path="/contacts" render={ContactsComponent}/>
             <Route exact path="/new_contact" render={NewContactComponent}/>
+            <Route exact path="/edit_contact" render={EditContactComponent}/>
           </Switch>
       </div>
     </Router>
