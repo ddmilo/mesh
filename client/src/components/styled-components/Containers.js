@@ -19,7 +19,7 @@ export const ContactsWrapper = Container.extend`
 export const ContactsContainer = styled.div`
     background-color: #FDFEFF;
     width: 99vw;
-    height: 98vh;
+    height: 90vh;
     overflow: scroll;
 `
 export const ContactContainer = styled.div`
@@ -123,6 +123,11 @@ export const HomeContainer = styled.div`
 export const ContactName = styled.div`
     width: 150px;
 `
+export const FooterContainer = styled.div`
+    width: 100vw;
+    display: flex;
+    justify-content: flex-end;
+`
 export default { Container, 
                  ContactContainer, 
                  ContactsContainer, 
@@ -134,4 +139,5 @@ export default { Container,
                  LeftDiv,
                  Button,
                  HomeContainer,
-                 ContactName }
+                 ContactName,
+                 FooterContainer }

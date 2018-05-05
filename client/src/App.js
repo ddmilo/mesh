@@ -52,7 +52,7 @@ class App extends Component {
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
-    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts}/>)
+    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn}/>)
 
     return (
     <Router>
