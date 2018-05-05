@@ -45,9 +45,27 @@ export const ContactContainer = styled.div`
 
 export const SideBarContainer = styled.div`
     background-color: #FDFEFF;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
     width: 29vw;
     height: 80vh;
     overflow: scroll;
+`
+
+export const SortButton = styled.div`
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    font-family: 'Raleway';
+    font-size: 30px;
+    border-bottom: 2px solid #D8D8D8;
+    padding-left: 10px;
+    &:hover{
+        background-color: #FF00AB;
+        color: white;
+    }
 `
 
 export const ContactInfo = styled.div`
@@ -158,5 +176,6 @@ export default { Container,
                  HomeContainer,
                  ContactName,
                  FooterContainer,
-                 ContactsBodyWrapper
+                 ContactsBodyWrapper,
+                 SortButton
                 }
