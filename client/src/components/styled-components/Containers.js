@@ -10,17 +10,30 @@ export const Container = styled.div`
     font-family: 'Raleway';
     background-color: #ECEAEA;
 `
-export const ContactsWrapper = Container.extend`
-    flex-direction: row;
+
+export const ContactsBodyWrapper = styled.div`
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+`
+export const ContactsWrapper = styled.div`
+    width: 100vw;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway';
+    background-color: #ECEAEA;
     display: flex;
     justify-content: space-around;
-    padding-top: 40px;
 `
 export const ContactsContainer = styled.div`
     background-color: #FDFEFF;
     width: 99vw;
-    height: 90vh;
+    height: 80vh;
     overflow: scroll;
+    margin: 5px;
 `
 export const ContactContainer = styled.div`
     width: 100vw;
@@ -33,7 +46,7 @@ export const ContactContainer = styled.div`
 export const SideBarContainer = styled.div`
     background-color: #FDFEFF;
     width: 29vw;
-    height: 98vh;
+    height: 80vh;
     overflow: scroll;
 `
 
@@ -125,11 +138,13 @@ export const ContactName = styled.div`
 `
 export const FooterContainer = styled.div`
     width: 100vw;
+    height: 10vh;
     display: flex;
     justify-content: flex-end;
     background-color: #FDFEFF;
 
 `
+
 export default { Container, 
                  ContactContainer, 
                  ContactsContainer, 
@@ -142,4 +157,6 @@ export default { Container,
                  Button,
                  HomeContainer,
                  ContactName,
-                 FooterContainer }
+                 FooterContainer,
+                 ContactsBodyWrapper
+                }

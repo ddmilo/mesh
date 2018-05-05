@@ -5,13 +5,12 @@ export const NavBarContainer = styled.div`
 `
 export const NavBarWrapper = NavBarContainer.extend`
     width: 100vw;
-    height: 9vh;
+    height: 10vh;
     background-color: #0085FF;
     box-shadow: 0 8px 6px -6px #999;
     shadow: 0 8px 6px -6px #999;
     shadow: 0 8px 6px -6px #999;
-    position: fixed;
-    margin-bottom: 50px;
+    position: relative;
 `
 
 export default { NavBarContainer, NavBarWrapper}

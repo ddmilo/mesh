@@ -1,7 +1,8 @@
 import React, { Component, Fragment } from 'react'
 import Contact from './Contact'
 import Footer from './Footer'
-import { ContactsContainer, ContactsWrapper } from './styled-components/Containers'
+import SideBar from './SideBar'
+import { Container, ContactsContainer, ContactsWrapper, ContactsBodyWrapper } from './styled-components/Containers'
 import { NavBarWrapper } from './styled-components/NavBar'
 import { MeshImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
@@ -20,12 +21,12 @@ class ContactsList extends Component {
     }
 
     render() {
-        if (this.props.loggedIn === false){
-            alert("Log in to view your contacts")
-            return(
-                <Redirect to='/' />
-            )
-        }
+        // if (this.props.loggedIn === false){
+        //     alert("Log in to view your contacts")
+        //     return(
+        //         <Redirect to='/' />
+        //     )
+        // }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
             if (contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1){
@@ -44,9 +45,7 @@ class ContactsList extends Component {
             )
         })
         return (
-            <div>
-                {this.props.loggedIn ? 
-                <Fragment>
+                <ContactsBodyWrapper>
                     <NavBarWrapper>
                         <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
                         <input type='text' 
@@ -54,16 +53,13 @@ class ContactsList extends Component {
                                onChange={this.handleChange}/>
                     </NavBarWrapper>
                     <ContactsWrapper>
+                        <SideBar />
                         <ContactsContainer>
-                        {contactsList}
+                            {contactsList}
                         </ContactsContainer>
                     </ContactsWrapper>
                     <Footer />
-                </Fragment>
-                 :
-                    <Redirect to='/' />
-                }
-            </div>
+                </ContactsBodyWrapper>
         )
     }
 }

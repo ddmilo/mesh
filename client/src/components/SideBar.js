@@ -1,10 +1,10 @@
 import React from 'react'
-
+import { SideBarContainer } from './styled-components/Containers'
 const SideBar = (props) => {
     return (
-        <div>
+        <SideBarContainer>
             Hello from SideBar
-        </div>
+        </SideBarContainer>
     )
 }
 export default SideBar
