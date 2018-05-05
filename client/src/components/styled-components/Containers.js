@@ -53,9 +53,9 @@ export const SideBarContainer = styled.div`
     overflow: scroll;
 `
 
-export const SortButton = styled.div`
+export const SortButton = styled.button`
     width: 100%;
-    height: 10vh;
+    height: 100%;
     display: flex;
     align-items: center;
     font-family: 'Raleway';

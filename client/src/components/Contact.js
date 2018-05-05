@@ -12,7 +12,7 @@ const Contact = (props) => {
         const contact = props.contact
         props.setCurrentContact(contact)
     }
-
+    
     return(
         <ContactContainer>
             <ContactInfo>

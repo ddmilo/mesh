@@ -1,16 +1,15 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import Contact from './Contact'
 import Footer from './Footer'
 import SideBar from './SideBar'
-import { Container, ContactsContainer, ContactsWrapper, ContactsBodyWrapper } from './styled-components/Containers'
+import { ContactsContainer, ContactsWrapper, ContactsBodyWrapper } from './styled-components/Containers'
 import { NavBarWrapper } from './styled-components/NavBar'
 import { MeshImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
     state = {
-        search: '',
-        sort: ''
+        search: ''
     }
     componentWillMount() {
         this.props.getContacts()
@@ -21,21 +20,20 @@ class ContactsList extends Component {
         event.preventDefault()
     }
 
+    findRelation = (relation) => {
+        this.setState({search: relation})
+    }
+
     render() {
-        // if (this.props.loggedIn === false){
-        //     alert("Log in to view your contacts")
-        //     return(
-        //         <Redirect to='/' />
-        //     )
-        // }
+        if (this.props.loggedIn === false){
+            alert("Log in to view your contacts")
+            return(
+                <Redirect to='/' />
+            )
+        }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
-            if (contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1){
-                return contact
-            }
-        })
-        const sortContacts = orderedContacts.filter((contact)=>{
-            if (contact.relation.indexOf(this.state.sort) !== -1){
+            if ((contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) || (contact.relation.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)){
                 return contact
             }
         })
@@ -59,7 +57,7 @@ class ContactsList extends Component {
                                onChange={this.handleChange}/>
                     </NavBarWrapper>
                     <ContactsWrapper>
-                        <SideBar />
+                        <SideBar findRelation={this.findRelation}/>
                         <ContactsContainer>
                             {contactsList}
                         </ContactsContainer>
