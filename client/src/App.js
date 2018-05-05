@@ -3,6 +3,7 @@ import SignUp from './components/SignUp'
 import LoginUser from './components/LoginUser'
 import Home from './components/Home'
 import ContactsList from './components/ContactsList'
+import NewContact from './components/NewContact'
 import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import axios from 'axios'
 
@@ -53,7 +54,7 @@ class App extends Component {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
     const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn}/>)
-
+    const NewContactComponent = () => (<NewContact />) 
     return (
     <Router>
       <div>
@@ -62,6 +63,7 @@ class App extends Component {
             <Route exact path="/login_user" render={LoginComponent}/>
             <Route exact path="/signup" render={SignUpComponent}/>
             <Route exact path="/contacts" render={ContactsComponent}/>
+            <Route exact path="/new_contact" render={NewContactComponent}/>
           </Switch>
       </div>
     </Router>
