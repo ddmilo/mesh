@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { Container } from './styled-components/Containers'
 import { Form } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
-class SignUp extends Component {
+class NewContact extends Component {
     state = {
         name: '',
         username: '',
@@ -19,7 +19,23 @@ class SignUp extends Component {
     }
 
     newContact = (event) => {
+        const contact = {
+            user_id: this.props.userId,
+            name: this.state.name,
+            username: this.state.username,
+            image: this.state.image,
+            relation: this.state.relation,
+            instagram: this.state.instagram,
+            twitter: this.state.twitter,
+            facebook: this.state.facebook,
+            phone: this.state.phone,
+            email: this.state.email,
+            street: this.state.street,
+            city: this.state.city,
+            zip: this.state.zip
+        }
         event.preventDefault()
+        this.props.newContact(contact)
         console.log("NewContact pushed")
     }
 
@@ -29,11 +45,15 @@ class SignUp extends Component {
     }
 
     render(){
+        if(this.props.newContactAdded === true){
+            return(
+              <Redirect to="/contacts" />
+            )
+          }
         return(
             <Container>
-                {this.state.relation}
                 <div>
-                <Form onSubmit={this.signUp}>
+                <Form onSubmit={this.newContact}>
                     <input 
                         type="string"
                         name="name"
@@ -131,11 +151,11 @@ class SignUp extends Component {
                         name="relation" value="other" onChange={this.handleChange}/>
                         <label for="contactChoice3">Other</label>
                     </div>
-                    <input className="input-button" type="submit" value="Sign Up" />
+                    <input className="input-button" type="submit" value="Add Contact" />
         </Form> </div>
             </Container>
         )
     }
 }
 
-export default SignUp
+export default NewContact
