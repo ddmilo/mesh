@@ -1,24 +1,29 @@
-# README
+**mesh**
+Check out the app [here](https://mesh-contacts.herokuapp.com/login)
+**App Developer**: 
+[Ninti Chance](https://github.com/nintichance)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+**Development Soundtrack**
+Check out the [TUNES](https://soundcloud.com/samuelwunsche/sundayvibes/recommended) I listened to to stay focused & inspired.
 
-Things you may want to cover:
+**App Overview**
 
-* Ruby version
+An app that helps you keep track of the people you know. Keep in Touch. Organize Contacts
+Call & Message. Never lose a person. Mesh.
 
-* System dependencies
+**Resources**
+* [React](https://facebook.github.io/react-native/docs/getting-started.html)
+* [Twilio](https://www.twilio.com/docs/api)
+* [Twilio Videos](https://www.youtube.com/watch?v=4BoATQjiF0Y&list=PLqrz4nXepkz63z1y4-oHfZHWy11gSoAn0&index=36)
+* [Ruby on Rails](http://guides.rubyonrails.org/routing.html#inspecting-and-testing-routes)
+* [LevelUp Tutorials](https://www.youtube.com/watch?v=OlVkYnVXPl0&t=97s)
+* [Codeacademy Learn Auth](https://www.codecademy.com/learn/rails-auth)
+* [PostgreSQL](http://www.postgresqltutorial.com/)
+* [Styled Components](https://www.styled-components.com/)
 
-* Configuration
+**The Planning Stages**
 
-* Database creation
+* [Trello User Stories](https://trello.com/b/b0hldBaj/mesh)
+* [Wireframes](https://www.figma.com/file/gEesuGIAcGWoEkjZCnxAgQcw/Mesh-Wireframes?node-id=7%3A0)
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Read about my process [here](https://medium.com/@nintichance/building-out-twitter-like-app-307811a6e632). 
