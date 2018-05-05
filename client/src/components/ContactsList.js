@@ -9,7 +9,8 @@ import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
     state = {
-        search: ''
+        search: '',
+        sort: ''
     }
     componentWillMount() {
         this.props.getContacts()
@@ -30,6 +31,11 @@ class ContactsList extends Component {
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
             if (contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1){
+                return contact
+            }
+        })
+        const sortContacts = orderedContacts.filter((contact)=>{
+            if (contact.relation.indexOf(this.state.sort) !== -1){
                 return contact
             }
         })
