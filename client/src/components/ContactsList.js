@@ -13,7 +13,7 @@ class ContactsList extends Component {
     componentWillMount() {
         this.props.getContacts()
     }
-    
+
     handleChange = (event) => {
         this.setState({ search: event.target.value })
         event.preventDefault()
@@ -27,7 +27,12 @@ class ContactsList extends Component {
             )
         }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
-        const contactsList = orderedContacts.map((contact) => {
+        const searchedContacts = orderedContacts.filter((contact)=>{
+            if (contact.name.indexOf(this.state.search) !== -1){
+                return contact
+            }
+        })
+        const contactsList = searchedContacts.map((contact) => {
             return (
                 <Contact
                     key={contact.id}
@@ -38,7 +43,6 @@ class ContactsList extends Component {
                 />
             )
         })
-
         return (
             <div>
                 {this.props.loggedIn ? 
