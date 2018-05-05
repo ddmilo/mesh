@@ -75,7 +75,7 @@ class App extends Component {
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
-    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn}/>)
+    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn} userId={this.state.currentUser.id}/>)
     const NewContactComponent = () => (<NewContact newContact={this.newContact} newContactAdded={this.state.newContactAdded} userId={this.state.currentUser.id}/>) 
     const EditContactComponent = () => (<EditContact />) 
     return (

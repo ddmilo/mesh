@@ -24,6 +24,7 @@ class ContactsList extends Component {
                 <Contact
                     key={contact.id}
                     contact={contact}
+                    userId={this.props.userId}
                 />
             )
         })

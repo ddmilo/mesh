@@ -2,10 +2,20 @@ import React from 'react'
 import { ContactImage, SocialImage, CrudImage } from './styled-components/Images'
 import { ContactContainer, ContactInfo, ContactName } from './styled-components/Containers'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 const Contact = (props) => {
-    const deleteContact = () => {
-        console.log("clicked delete")
+    const deleteContact = async() => {
+        const userId = props.userId
+        const contactId = props.contact.id
+        try{
+            axios.delete(`/api/users/${userId}/contacts/${contactId}`)
+            
+            alert("contact deleted")
+        }
+        catch(error){
+        }
     }
+
     return(
         <ContactContainer>
             <ContactInfo>
