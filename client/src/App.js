@@ -13,7 +13,9 @@ class App extends Component {
     currentUser: {},
     contacts: [],
     loggedIn: false,
-    newContactAdded: false
+    newContactAdded: false,
+    redirect: false,
+    currentContact: {}
   }
 
   signUp = async(userInfo) => {
@@ -64,20 +66,32 @@ class App extends Component {
     try{
       const user_id = this.state.currentUser.id
       const response = await axios.post(`/api/users/${user_id}/contacts`, contactInfo)
+      console.log(response)
       this.setState({newContactAdded: true})
     }
     catch(error){
       console.log(error)
     }
   }
-
+  deleteContact = async(userId, contactId) => {
+    try{
+        axios.delete(`/api/users/${userId}/contacts/${contactId}`)
+        alert("contact deleted")
+        this.setState({redirect: true})
+    }
+    catch(error){
+    }
+}
+setCurrentContact = (contact) =>{
+  this.setState({currentContact: contact})
+}
 
   render() {
     const LoginComponent = () => (<LoginUser loggedIn={this.state.loggedIn} loginUser={this.loginUser}/>)
     const SignUpComponent = () => (<SignUp loggedIn={this.state.loggedIn} signUp={this.signUp}/>)
-    const ContactsComponent = () => (<ContactsList getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn} userId={this.state.currentUser.id}/>)
+    const ContactsComponent = () => (<ContactsList setCurrentContact = {this.setCurrentContact}redirect ={this.state.redirect} deleteContact={this.deleteContact} getContacts={this.getContacts} contacts={this.state.contacts} loggedIn={this.state.loggedIn} userId={this.state.currentUser.id}/>)
     const NewContactComponent = () => (<NewContact newContact={this.newContact} newContactAdded={this.state.newContactAdded} userId={this.state.currentUser.id}/>) 
-    const EditContactComponent = () => (<EditContact />) 
+    const EditContactComponent = () => (<EditContact currentContact={this.state.currentContact}/>) 
     return (
     <Router>
       <div>

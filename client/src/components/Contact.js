@@ -2,18 +2,15 @@ import React from 'react'
 import { ContactImage, SocialImage, CrudImage } from './styled-components/Images'
 import { ContactContainer, ContactInfo, ContactName } from './styled-components/Containers'
 import { Link } from 'react-router-dom'
-import axios from 'axios'
 const Contact = (props) => {
     const deleteContact = async() => {
         const userId = props.userId
         const contactId = props.contact.id
-        try{
-            axios.delete(`/api/users/${userId}/contacts/${contactId}`)
-            
-            alert("contact deleted")
-        }
-        catch(error){
-        }
+        props.deleteContact(userId, contactId)
+    }
+    const setCurrentContact = () => {
+        const contact = props.contact
+        props.setCurrentContact(contact)
     }
 
     return(
@@ -33,7 +30,7 @@ const Contact = (props) => {
                 <a href={`https://www.instagram.com/${props.contact.instagram}`} target="_blank"><SocialImage src="https://i.imgur.com/ipsgw73.png"/></a>
                 <a href={`https://www.facebook.com/${props.contact.facebook}`} target="_blank"><SocialImage src="https://i.imgur.com/8Ew6ev1.png"/></a>
             </div>
-            <div>
+            <div onClick={()=>{setCurrentContact()}}>
                 <Link to='/edit_contact'><CrudImage src="https://i.imgur.com/wvOabn0.png"/></Link>
                 <CrudImage src="https://i.imgur.com/YcNLkpg.png" onClick={() => deleteContact()}/>
             </div>

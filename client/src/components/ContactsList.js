@@ -18,6 +18,11 @@ class ContactsList extends Component {
                 <Redirect to='/' />
             )
         }
+        if (this.props.redirect === true){
+            return(
+                <Redirect to='/contacts' />
+            )
+        }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const contactsList = orderedContacts.map((contact) => {
             return (
@@ -25,6 +30,8 @@ class ContactsList extends Component {
                     key={contact.id}
                     contact={contact}
                     userId={this.props.userId}
+                    deleteContact={this.props.deleteContact}
+                    setCurrentContact={this.props.setCurrentContact}
                 />
             )
         })
