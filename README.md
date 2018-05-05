@@ -4,7 +4,7 @@ Check out the app [here](https://mesh-contacts.herokuapp.com/login)
 [Ninti Chance](https://github.com/nintichance)
 
 **Development Soundtrack**
-Check out the [TUNES](https://soundcloud.com/samuelwunsche/sundayvibes/recommended) I listened to to stay focused & inspired.
+Check out the [TUNES](https://soundcloud.com/samuelwunsche/sundayvibes/recommended), [TUNES](https://www.youtube.com/watch?v=_wYwnakoUmU&list=PL5pADFHuPadw7XAIw0rgb8LUeHAYWuiiO&index=1), [TUNES](https://www.youtube.com/watch?v=4wZx5tYE4-Q&list=PLwo18270sLnhD4xqoOJL_RONDZkxo1y8Y) I listened to to stay focused & inspired.
 
 **App Overview**
 
