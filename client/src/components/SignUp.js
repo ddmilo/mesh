@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container } from './styled-components/Containers'
-import { Form } from './styled-components/Form'
+import NavBar from './NavBar'
+import { Form, Container, SignUpFormWrapper, FormBody, FormInput, SignUpButton } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
 class SignUp extends Component {
     state = {
@@ -39,46 +39,51 @@ class SignUp extends Component {
           }
         return(
             <Container>
-                <div>
-                <Form onSubmit={this.signUp}>
-                    <input 
-                        type="string"
-                        name="name"
-                        placeholder="Name"
-                        onChange={this.handleChange}
-                         />
-                    <input 
-                        type="string"
-                        name="username"
-                        placeholder="Username"
-                        onChange={this.handleChange}
-                         />
-                    <input 
-                        type="string"
-                        name="image"
-                        placeholder="Profile Image"
-                        onChange={this.handleChange}
-                         />
-                           <input 
-                        type="string"
-                        name="phone"
-                        placeholder="Phone Number"
-                        onChange={this.handleChange}
-                         />
-                    <input 
-                        type="string"
-                        name="email"
-                        placeholder="Email"
-                        onChange={this.handleChange}
-                         />
-                    <input 
-                        type="string"
-                        name="password"
-                        placeholder="Password"
-                        onChange={this.handleChange}
-                         />
-                    <input className="input-button" type="submit" value="Sign Up" />
-        </Form> </div>
+                <NavBar />
+                <SignUpFormWrapper>
+                    <FormBody>
+                        <p>Welcome to Mesh!</p>
+                        <Form onSubmit={this.signUp}>
+                            <FormInput 
+                                type="string"
+                                name="name"
+                                placeholder="Name"
+                                onChange={this.handleChange}
+                                />
+                            <FormInput 
+                                type="string"
+                                name="username"
+                                placeholder="Username"
+                                onChange={this.handleChange}
+                                />
+                            <FormInput 
+                                type="string"
+                                name="image"
+                                placeholder="Profile Image"
+                                onChange={this.handleChange}
+                                />
+                            <FormInput 
+                                type="string"
+                                name="phone"
+                                placeholder="Phone Number"
+                                onChange={this.handleChange}
+                                />
+                            <FormInput 
+                                type="string"
+                                name="email"
+                                placeholder="Email"
+                                onChange={this.handleChange}
+                                />
+                            <FormInput 
+                                type="string"
+                                name="password"
+                                placeholder="Password"
+                                onChange={this.handleChange}
+                                />
+                            <SignUpButton className="input-button" type="submit" value="Sign Up" />
+                        </Form> 
+                    </FormBody>
+                </SignUpFormWrapper>
             </Container>
         )
     }

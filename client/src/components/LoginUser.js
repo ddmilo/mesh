@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Container } from './styled-components/Containers'
-import { Form } from './styled-components/Form'
+import NavBar from './NavBar'
+import { Form, Container, FormWrapper, FormBody, FormInput, FormButton } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
 class Login extends Component {
     state = {
@@ -25,25 +25,27 @@ class Login extends Component {
       }
         return(
             <Container>
-                <div><p> Welcome Back </p>
-                <Form onSubmit={this.handleLogin}>
-                    <input 
-                        type="string"
-                        name="username"
-                        placeholder="Email"
-                        onChange={this.handleChange}
-                         />
-                    <input 
-                        type="string"
-                        name="password"
-                        placeholder="Password"
-                        onChange={this.handleChange}
-                         />
-                    <input className="input-button" type="submit" value="Login" />
-                </Form>
-                </div>
-            
-               
+                <NavBar />
+                <FormWrapper>
+                <FormBody>
+                    <p> Welcome Back!</p>
+                    <Form onSubmit={this.handleLogin}>
+                        <FormInput
+                            type="string"
+                            name="username"
+                            placeholder="Email"
+                            onChange={this.handleChange}
+                            />
+                        <FormInput 
+                            type="string"
+                            name="password"
+                            placeholder="Password"
+                            onChange={this.handleChange}
+                            />
+                        <FormButton className="input-button" type="submit" value="Login" />
+                    </Form>
+                </FormBody>
+                </FormWrapper>
             </Container>
         )
     }

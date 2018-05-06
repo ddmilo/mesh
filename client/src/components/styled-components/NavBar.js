@@ -22,6 +22,9 @@ export const SearchBar = styled.input`
     border: 0;
     padding: 5px;
     border-radius: 4px;
+    font-size: 1.5em;
+    font-family: 'Raleway';
+    color: white;
 `
 
 export const SearchBarContainer = styled.div`
