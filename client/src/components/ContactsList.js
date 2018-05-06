@@ -9,7 +9,8 @@ import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
     state = {
-        search: ''
+        search: '',
+        showMenu: true
     }
     componentWillMount() {
         this.props.getContacts()
@@ -22,6 +23,14 @@ class ContactsList extends Component {
 
     findRelation = (relation) => {
         this.setState({search: relation})
+    }
+    showMenu = () => {
+        if (this.state.showMenu === true){
+            this.setState({showMenu: false})
+        }
+        else{
+        this.setState({showMenu: true})
+    }
     }
 
     render() {
@@ -51,7 +60,7 @@ class ContactsList extends Component {
         return (
                 <ContactsBodyWrapper>
                     <NavBarWrapper>
-                        <MenuImageContainer>
+                        <MenuImageContainer onClick={()=>this.showMenu()}>
                             <MenuImage src='https://i.imgur.com/QNNZHFA.png'/>
                         </MenuImageContainer>
                         <SearchBarContainer>
@@ -62,7 +71,7 @@ class ContactsList extends Component {
                         <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
                     </NavBarWrapper>
                     <ContactsWrapper>
-                        {/* <SideBar findRelation={this.findRelation}/> */}
+                        {this.state.showMenu ? <SideBar findRelation={this.findRelation}/> : null}
                         <ContactsContainer>
                             {contactsList}
                         </ContactsContainer>

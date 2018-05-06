@@ -20,13 +20,16 @@ export const MenuImage = SocialImage.extend`
 `
 export const MenuImageContainer = styled.div`
     border-radius: 100%;
-    background-color: #2697FF;
+    background-color: #0085FF;
     width: 60px;
     height: 60px;
     margin: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
+    &:hover{
+        background-color: #2697FF;
+    }
 `
 export const NewContactImage = styled.img`
     width: 70px;
