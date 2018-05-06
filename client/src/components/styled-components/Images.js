@@ -14,9 +14,23 @@ export const SocialImage = styled.img`
     height: 30px;
     margin: 10px;
 `
-export const NewContactImage = styled.img`
+
+export const MenuImage = SocialImage.extend`
+    margin: 10px;
+`
+export const MenuImageContainer = styled.div`
+    border-radius: 100%;
+    background-color: #2697FF;
     width: 60px;
     height: 60px;
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+export const NewContactImage = styled.img`
+    width: 70px;
+    height: 70px;
     margin: 10px;
 `
 export const CrudImage = styled.img`
@@ -24,10 +38,16 @@ export const CrudImage = styled.img`
     height: 20px;
     margin: 10px;
 `
+export const SearchIcon = CrudImage.extend`
+
+`
 
 export default { MeshImage,
                  SocialImage,
                  ContactImage,
                  NewContactImage,
-                 CrudImage
+                 CrudImage,
+                 MenuImage,
+                 MenuImageContainer,
+                 SearchIcon
                 }

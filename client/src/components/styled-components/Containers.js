@@ -16,10 +16,11 @@ export const ContactsBodyWrapper = styled.div`
     height: 100vh;
     display: flex;
     flex-direction: column;
+    position: relative;
 `
 export const ContactsWrapper = styled.div`
     width: 100vw;
-    height: 80vh;
+    height: 90vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,7 +32,7 @@ export const ContactsWrapper = styled.div`
 export const ContactsContainer = styled.div`
     background-color: #FDFEFF;
     width: 99vw;
-    height: 80vh;
+    height: 90vh;
     overflow: scroll;
     margin: 5px;
 `
@@ -49,7 +50,7 @@ export const SideBarContainer = styled.div`
     justify-content: space-around;
     flex-direction: column;
     width: 29vw;
-    height: 80vh;
+    height: 90vh;
     overflow: scroll;
 `
 
@@ -160,7 +161,10 @@ export const FooterContainer = styled.div`
     display: flex;
     justify-content: flex-end;
     background-color: #FDFEFF;
-
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.001);
+    bottom: 50px;
+	right: 50px;
 `
 
 export default { Container, 

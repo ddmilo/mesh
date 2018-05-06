@@ -3,8 +3,8 @@ import Contact from './Contact'
 import Footer from './Footer'
 import SideBar from './SideBar'
 import { ContactsContainer, ContactsWrapper, ContactsBodyWrapper } from './styled-components/Containers'
-import { NavBarWrapper } from './styled-components/NavBar'
-import { MeshImage } from './styled-components/Images'
+import { NavBarWrapper, SearchBar, SearchBarContainer } from './styled-components/NavBar'
+import { MeshImage, MenuImage, MenuImageContainer, SearchIcon } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
@@ -25,12 +25,12 @@ class ContactsList extends Component {
     }
 
     render() {
-        if (this.props.loggedIn === false){
-            alert("Log in to view your contacts")
-            return(
-                <Redirect to='/' />
-            )
-        }
+        // if (this.props.loggedIn === false){
+        //     alert("Log in to view your contacts")
+        //     return(
+        //         <Redirect to='/' />
+        //     )
+        // }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
             if ((contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) || (contact.relation.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)){
@@ -51,13 +51,18 @@ class ContactsList extends Component {
         return (
                 <ContactsBodyWrapper>
                     <NavBarWrapper>
-                        <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
-                        <input type='text' 
-                               placeholder='Search Contacts'
+                        <MenuImageContainer>
+                            <MenuImage src='https://i.imgur.com/QNNZHFA.png'/>
+                        </MenuImageContainer>
+                        <SearchBarContainer>
+                            <SearchIcon src='https://i.imgur.com/VDcz1Nn.png'/>
+                            <SearchBar type='text' 
                                onChange={this.handleChange}/>
+                        </SearchBarContainer>
+                        <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
                     </NavBarWrapper>
                     <ContactsWrapper>
-                        <SideBar findRelation={this.findRelation}/>
+                        {/* <SideBar findRelation={this.findRelation}/> */}
                         <ContactsContainer>
                             {contactsList}
                         </ContactsContainer>
