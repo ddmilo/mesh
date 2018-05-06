@@ -1,5 +1,7 @@
 **mesh**
-Check out the app [here](https://mesh-contacts.herokuapp.com/login)
+
+Check out the app [here](https://mesh-contacts.herokuapp.com/)
+
 **App Developer**: 
 [Ninti Chance](https://github.com/nintichance)
 
