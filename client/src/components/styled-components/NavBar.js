@@ -16,7 +16,7 @@ export const NavBarWrapper = NavBarContainer.extend`
     position: relative;
 `
 export const SearchBar = styled.input`
-    width: 500px;
+    width: 40vw;
     height: 35px;
     background-color: #62B4FF;
     border: 0;
@@ -25,6 +25,10 @@ export const SearchBar = styled.input`
     font-size: 1.5em;
     font-family: 'Raleway';
     color: white;
+    @media only screen and (max-width: 500px){
+        width: 30vw;
+        height: 30px;
+    }
 `
 
 export const SearchBarContainer = styled.div`

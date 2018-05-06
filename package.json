@@ -9,6 +9,8 @@
     "postinstall": "npm run build && npm run deploy && echo 'Client built!'"
   },
   "dependencies": {
-    "react-alert": "^4.0.2"
+    "react-alert": "^4.0.2",
+    "react-custom-radio": "^1.0.7",
+    "react-radio-group": "^3.0.3"
   }
 }

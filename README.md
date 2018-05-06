@@ -10,7 +10,9 @@ Check out the [TUNES](https://soundcloud.com/samuelwunsche/sundayvibes/recommend
 
 **App Overview**
 
-An app that helps you keep track of the people you know. Keep in Touch. Organize Contacts
+An app that helps you keep track of the people you know. 
+
+Keep in Touch. Organize Contacts
 Call & Message. Never lose a person. Mesh.
 
 **Resources**

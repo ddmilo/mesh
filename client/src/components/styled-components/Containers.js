@@ -28,6 +28,10 @@ export const ContactsWrapper = styled.div`
     background-color: #ECEAEA;
     display: flex;
     justify-content: space-around;
+    @media only screen and (max-width: 800px){
+        flex-direction: column;
+    }
+
 `
 export const ContactsContainer = styled.div`
     background-color: #FDFEFF;
@@ -52,9 +56,15 @@ export const SideBarContainer = styled.div`
     width: 29vw;
     height: 90vh;
     overflow: scroll;
+    @media only screen and (max-width: 800px){
+        flex-direction: row;
+        width: 100vw;
+        height: 10vh;
+        font-size: 1.25em;
+    }
 `
 
-export const SortButton = styled.button`
+export const SortButton = styled.div`
     width: 100%;
     height: 100%;
     display: flex;
@@ -67,7 +77,95 @@ export const SortButton = styled.button`
         background-color: #FF00AB;
         color: white;
     }
+    @media only screen and (max-width: 800px){
+        font-size: 1em;
+        background-color: #FF00AB;
+        color: white;
+    }
+    @media only screen and (max-width: 500px){
+        font-size: 0.75em;
+        border-bottom: none;
+    }
 `
+export const Friend = SortButton.extend`
+        background-image: url('https://i.imgur.com/9hwvK1F.png?1');
+        &:hover{
+            background-image: url('https://i.imgur.com/Vh20eoS.png?1');
+            background-size: 200px;
+        }
+        background-size: 130px;
+        background-repeat: no-repeat;
+        background-position: center;
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/lzv1ja8.png');
+        height: 100%;
+        background-size: 30px;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+`
+export const All= Friend.extend`
+    background-image: url('https://i.imgur.com/gE2LgG9.png');
+    &:hover{
+        background-image: url('https://i.imgur.com/qRpHeQA.png');
+        background-size: 200px;
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/ghIgSXT.png');
+    }
+`
+export const Family = Friend.extend`
+    background-image: url('https://i.imgur.com/ogeNQvF.png');
+    &:hover{
+        background-image: url('https://i.imgur.com/BAQWpA3.png?1');
+        background-size: 175px;
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/Yxax28b.png');
+    }
+`
+export const Date = Friend.extend`
+    background-image: url('https://i.imgur.com/fql4gEa.png');
+    &:hover{
+        background-image: url('https://i.imgur.com/9fGRs38.png');
+        background-size: 200px;
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/nFkkNx4.png');
+    }
+`
+export const Class = Friend.extend`
+    background-image: url('https://i.imgur.com/fiXl5IE.png');
+    &:hover{
+        background-image: url('https://i.imgur.com/Yj80zJd.png');
+        background-size: 200px;
+
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/snUj9lK.png');
+    }
+`
+export const Job = Friend.extend`
+    background-image: url('https://i.imgur.com/hLhgIRL.png');
+    &:hover{
+        background-image: url('https://i.imgur.com/VUwjOMe.png');
+        background-size: 175px;
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/Xy5vIPx.png');
+    }
+`
+export const Network = Friend.extend`
+    background-image: url('https://i.imgur.com/2UCpKaw.png?1');
+    &:hover{
+        background-image: url('https://i.imgur.com/qHXmDyD.png?1');
+        background-size: 200px;
+    }
+    @media only screen and (max-width: 500px){
+        background-image: url('https://i.imgur.com/XBAFu5Z.png');
+    }
+`
+
 
 export const ContactInfo = styled.div`
     display: flex;
@@ -83,9 +181,10 @@ export const SquaresContainer = styled.div `
     @media only screen and (max-width: 1199px){
         position: static;
     }
-    @media only screen and (max-width: 500px){
-        height: 150vh;
+    @media only screen and (max-width: 500px;){
+        height: 200vh;
     }
+
 `
 export const RightDiv = styled.div`
     display: flex;
@@ -97,8 +196,8 @@ export const RightDiv = styled.div`
     height: 50vh;
     z-index: 4;
     background: #FF00AB;
-    top: 35vh;
-    right: 20vw;
+    top: 10vh;
+    right: 25vw;
     color: white;
     @media only screen and (max-width: 1199px){
         position: static;
@@ -106,6 +205,10 @@ export const RightDiv = styled.div`
         right: none;
         width: 100vw;
     }
+    @media only screen and (max-width: 500px;){
+        height: 100vh;
+    }
+   
 `
   
 export const LeftDiv = styled.div `
@@ -127,9 +230,10 @@ export const LeftDiv = styled.div `
         left: none;
         width: 100vw;
     }
-    @media only screen and (max-width: 500px){
-        height: 50vh;
+    @media only screen and (max-width: 500px;){
+        height: 100vh;
     }
+   
 `
 export const Button = styled.div`
     width: 150px;
@@ -149,7 +253,10 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 100vh;
+    height: 200vh;
+    @media only screen and (max-width: 500px;){
+        height: 200vh;
+    }
 `
 
 export const ContactName = styled.div`
@@ -167,19 +274,3 @@ export const FooterContainer = styled.div`
 	right: 50px;
 `
 
-export default { Container, 
-                 ContactContainer, 
-                 ContactsContainer, 
-                 SideBarContainer,
-                 ContactsWrapper,
-                 ContactInfo,
-                 SquaresContainer,
-                 RightDiv,
-                 LeftDiv,
-                 Button,
-                 HomeContainer,
-                 ContactName,
-                 FooterContainer,
-                 ContactsBodyWrapper,
-                 SortButton
-                }

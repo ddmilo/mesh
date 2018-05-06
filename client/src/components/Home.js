@@ -10,7 +10,7 @@ const Home = () => {
                 <NavBar />
                 <SquaresContainer>
                     <RightDiv>
-                        <InfoText>Keep in Touch Organize Contacts Call and Message Never lose a person Mesh. Sign Up Today!</InfoText>
+                        <InfoText>Keep in Touch. Organize Contacts. Call and Message. Mesh. Sign Up Today!</InfoText>
                         <Button><Link to="/signup">Sign Up</Link></Button>
                     </RightDiv>
                     <LeftDiv>

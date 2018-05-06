@@ -3,6 +3,10 @@ import styled from 'styled-components'
 export const MeshImage = styled.img`
     width: 200px;
     height: 60px;
+    @media only screen and (max-width: 500px){
+        width: 150px;
+        height: 50px;
+    }
 `
 export const ContactImage = styled.img`
     width: 50px;
@@ -17,6 +21,9 @@ export const SocialImage = styled.img`
 
 export const MenuImage = SocialImage.extend`
     margin: 10px;
+    @media only screen and (max-width: 500px){
+        width: 30px;
+    }
 `
 export const MenuImageContainer = styled.div`
     border-radius: 100%;

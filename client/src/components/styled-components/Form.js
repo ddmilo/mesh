@@ -37,7 +37,17 @@ export const FormBody = styled.div`
     justify-content: center;
     flex-direction: column;
 `
-
+export const NewContactFormBody = FormBody.extend`
+    background-color: #FF00AB;
+    width: 70vw;
+    height: 70vh;
+    overflow: scroll;
+    border-radius: 4px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+`
+export const EditContactFormBody = NewContactFormBody.extend`
+    background-color: #0085FF;
+`
 export const FormInput = styled.input`
     width: 300px;
     height: 30px;
@@ -47,6 +57,11 @@ export const FormInput = styled.input`
     margin: 10px;
     font-size: 1.5em;
     font-family: 'Raleway';
+`
+export const NewContactInput = FormInput.extend`
+    width: 80%;
+    margin: 5px;
+    border-radius: 2px;
 `
 export const FormButton = styled.input`
     width: 310px;
@@ -65,4 +80,40 @@ export const SignUpButton = FormButton.extend`
     background-image: url('https://i.imgur.com/qILBXRj.png');
     background-color: #FF00AB;
 `
-export default { Form, Container, FormWrapper, FormBody, FormInput, FormButton, SignUpButton, SignUpFormWrapper }
+
+export const RadioOptions = styled.div`
+    // display: flex;
+    justify-content: space-around;
+    height: 10vh;
+    color: white;
+    margin: 10px;
+    font-size: 1.25em;
+    p {
+        color: white;
+        font-size: 1.25em;
+        padding: 0;
+        margin: 0;
+    }
+`
+
+export const RadioButtons = styled.input`
+    #choice{
+        height: 25px;
+        width: 25px;
+    }
+`
+
+export default { 
+                Form, 
+                Container, 
+                FormWrapper, 
+                FormBody, 
+                FormInput, 
+                FormButton, 
+                SignUpButton, 
+                SignUpFormWrapper, 
+                NewContactFormBody, 
+                NewContactInput, 
+                RadioOptions,
+                RadioButtons
+ }
