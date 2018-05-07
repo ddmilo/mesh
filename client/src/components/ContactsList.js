@@ -69,7 +69,7 @@ class ContactsList extends Component {
                                        placeholder='search'
                                        onChange={this.handleChange}/>
                         </SearchBarContainer>
-                        <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png' /></Link>
+                        <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png?1' /></Link>
                     </NavBarWrapper>
                     <ContactsWrapper>
                         {this.state.showMenu ? <SideBar findRelation={this.findRelation}/> : null}

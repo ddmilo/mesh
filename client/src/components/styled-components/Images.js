@@ -1,22 +1,26 @@
 import styled from 'styled-components'
 
 export const MeshImage = styled.img`
-    width: 200px;
+    width: 150px;
     height: 60px;
+    margin-right: 10px;
     @media only screen and (max-width: 500px){
-        width: 150px;
-        height: 50px;
+        width: 125px;
+        height: 40px;
+        margin-right: 0px;
     }
 `
 export const ContactImage = styled.img`
     width: 50px;
     height: 50px;
-    margin-right: 20px;
+    justify-self: flex-start;
+  
 `
 export const SocialImage = styled.img`
     width: 30px;
     height: 30px;
     margin: 10px;
+   
 `
 
 export const MenuImage = SocialImage.extend`

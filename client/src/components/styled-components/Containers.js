@@ -43,9 +43,10 @@ export const ContactsContainer = styled.div`
 export const ContactContainer = styled.div`
     width: 100vw;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     font-family: 'Raleway';
+    font-size: 1.25em;
 `
 
 export const SideBarContainer = styled.div`
@@ -104,7 +105,7 @@ export const Friend = SortButton.extend`
         background-position: center;
     }
 `
-export const All= Friend.extend`
+export const All = Friend.extend`
     background-image: url('https://i.imgur.com/gE2LgG9.png');
     &:hover{
         background-image: url('https://i.imgur.com/qRpHeQA.png');
@@ -170,6 +171,8 @@ export const Network = Friend.extend`
 export const ContactInfo = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    width: 50%;
 `
 export const SquaresContainer = styled.div `
     width: 100vw;
@@ -274,3 +277,29 @@ export const FooterContainer = styled.div`
 	right: 50px;
 `
 
+export const IconsContainer = styled.div`
+    display: flex;
+    width: 50%;
+    justify-content: space-around;
+    @media only screen and (max-width: 500px){
+        flex-direction: column;
+        justify-content: flex-end;
+    }
+`
+export const ContactInfoContainer = IconsContainer.extend`
+    @media only screen and (max-width: 500px){
+        flex-direction: column;
+        p {
+            width: 200px;
+            padding: 0;
+        }
+    }
+`
+
+export const RequestContainer = styled.div`
+    display: flex;
+    justify-content: flex-end;
+`
+export const SocialContainer = RequestContainer.extend`
+    
+`
