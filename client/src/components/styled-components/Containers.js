@@ -217,7 +217,7 @@ export const HomeContainer = styled.div`
     display: flex;
     flex-direction: column;
     width: 100vw;
-    height: 200vh;
+    height: 100vh;
     @media only screen and (max-width: 500px){
         height: 100vh;
     }
@@ -366,4 +366,15 @@ export const RequestContainer = styled.div`
 `
 export const SocialContainer = RequestContainer.extend`
 
+`
+export const ProfileDiv = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+    width: 105px;
+    @media only screen and (max-width: 500px){
+        width: 90px;
+        
+    }
 `

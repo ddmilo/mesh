@@ -4,10 +4,14 @@ export const MeshImage = styled.img`
     width: 150px;
     height: 60px;
     margin-right: 10px;
+    // @media only screen and (max-width: 500px){
+    //     width: 125px;
+    //     height: 40px;
+    //     margin-right: 0px;
+    // }
     @media only screen and (max-width: 500px){
-        width: 125px;
-        height: 40px;
-        margin-right: 0px;
+        width: 0px;
+        margin: 0;
     }
 `
 
@@ -31,9 +35,6 @@ export const SocialImage = styled.img`
 
 export const MenuImage = SocialImage.extend`
     margin: 10px;
-    @media only screen and (max-width: 500px){
-        width: 30px;
-    }
 `
 export const MenuImageContainer = styled.div`
     border-radius: 100%;
@@ -47,6 +48,7 @@ export const MenuImageContainer = styled.div`
     &:hover{
         background-color: #2697FF;
     }
+
 `
 export const NewContactImage = styled.img`
     width: 70px;
@@ -64,4 +66,9 @@ export const SearchIcon = CrudImage.extend`
 export const PersonImage = styled.img`
     width: 30px;
     height: 30px;
+`
+export const ProfileImage = styled.img`
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
 `

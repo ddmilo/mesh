@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import Contact from './Contact'
 import Footer from './Footer'
 import SideBar from './SideBar'
-import { ContactsContainer, ContactsWrapper, ContactsBodyWrapper } from './styled-components/Containers'
+import { ContactsContainer, ContactsWrapper, ContactsBodyWrapper, ProfileDiv } from './styled-components/Containers'
 import { NavBarWrapper, SearchBar, SearchBarContainer } from './styled-components/NavBar'
-import { MeshImage, MenuImage, MenuImageContainer, SearchIcon } from './styled-components/Images'
+import { MeshImage, MenuImage, MenuImageContainer, SearchIcon, ProfileImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
 
 class ContactsList extends Component {
@@ -69,6 +69,7 @@ class ContactsList extends Component {
                                        placeholder='search'
                                        onChange={this.handleChange}/>
                         </SearchBarContainer>
+                        <ProfileDiv onClick={()=>this.props.logout()}><ProfileImage src={this.props.currentUser.image}/>logout</ProfileDiv>
                         <Link to='/'><MeshImage src='https://i.imgur.com/Wfw20Fk.png?1' /></Link>
                     </NavBarWrapper>
                     <ContactsWrapper>
