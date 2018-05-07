@@ -82,7 +82,6 @@ export const SignUpButton = FormButton.extend`
 `
 
 export const RadioOptions = styled.div`
-    // display: flex;
     justify-content: space-around;
     height: 10vh;
     color: white;
@@ -90,16 +89,9 @@ export const RadioOptions = styled.div`
     font-size: 1.25em;
     p {
         color: white;
-        font-size: 1.25em;
+        font-size: 1em;
         padding: 0;
         margin: 0;
-    }
-`
-
-export const RadioButtons = styled.input`
-    #choice{
-        height: 25px;
-        width: 25px;
     }
 `
 
@@ -109,8 +101,12 @@ export const LoginWrapper = styled.div`
     align-items: center;
     width: 100vw;
     height: 100vh;
-`
+    @media only screen and (max-width: 500px){
+        height: 90vh;
+        width: 100vw;
+    }
 
+`
 
 export const UserFormBody = styled.div`
     display: flex;
@@ -139,20 +135,33 @@ export const UserFormBody = styled.div`
     @media only screen and (max-width: 600px){
     width: 80%;
     }
+    @media only screen and (max-width: 500px){
+        height: 90vh;
+        width: 100vw;
+    }
 `
 export const EditFormBody = UserFormBody.extend`
     background-color: #0085FF;
 `
 export const InputBoxContainer =styled.div`
     overflow: scroll;
-    height: 40vh;
+    height: 35vh;
     margin-top: 0;
 `
 export const FormInputBody = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 80%;
     :first-child{
         font-family: 'Raleway', sans-serif;
     }
+    @media only screen and (max-width: 500px){
+        p{
+            margin-left: 10px;
+        }
+    }
+   
 `
 
 export const UserFormWrapper = styled.div`
@@ -166,17 +175,6 @@ export const UserFormWrapper = styled.div`
     box-shadow: 0 0 20px rgba(0, 0, 0, .05), 0 0px 40px rgba(0, 0, 0, .08); 
 `
 
-export const UserFormHeader = styled.header`
-    margin: 90px 0 0 0;
-    padding-top: 32px;
-    padding-bottom: 32px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
-    color: white;
-`
-
 export const UserFormInput = styled.input`
     justify-content: center;
     align-items: center;
@@ -187,10 +185,8 @@ export const UserFormInput = styled.input`
     font-family: inherit;
     font-size: 1.25em;
     background-color: #FBCAEB;
-    border-radius: 4px;
     border-top: 0;
     border-right: 0;
-    // border-bottom: 1px solid #f9a825;
     border-left: 0;
     transition: border-bottom-color .25s ease-in;
     &:focus {
@@ -204,4 +200,42 @@ export const EditFormInput = UserFormInput.extend`
 export const UserFormButton = styled.div`
     display: flex;
     justify-content: center;
+`
+
+export const RadioInputs = styled.div`
+    display: flex;
+    justify-content: space-around;
+    width: 45vw;
+    margin-left: 10px;
+    @media only screen and (max-width: 500px){
+        font-size: .95em;
+        margin-left: 18px;
+    }
+`
+
+export const EditSubmitInput = styled.input`
+    background-color: rgba(0, 0, 0, 0.0001);
+    border: none;
+    font-size: 1em;
+    width: 150px;
+    height: 50px;
+    color: white;
+    margin: 10px;
+`
+
+export const EditButton = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 150px;
+    height: 50px;
+    margin-left: 10px;
+`
+export const ActionContainer = styled.div`
+    display: flex;
+    justify-content: space-around;
+    a{
+        text-decoration: none;
+        color: white;
+    }
 `

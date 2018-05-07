@@ -4,6 +4,7 @@ export const NavBarContainer = styled.div`
     width: 100vw;
     @media only screen and (max-width: 500px){
         height: 10vh;
+        z-index: 1;
     }
 `
 export const NavBarWrapper = NavBarContainer.extend`

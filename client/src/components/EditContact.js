@@ -1,18 +1,22 @@
 import React, { Component } from 'react'
+import NavBar from './NavBar'
+import { PersonImage } from './styled-components/Images'
 import {
     Container,
     LoginWrapper,
-    UserFormHeader,
     EditFormBody,
     GlobalFormInputButton,
     EditFormInput,
     UserFormButton,
     RadioOptions,
     FormInputBody,
-    InputBoxContainer
+    InputBoxContainer,
+    RadioInputs,
+    EditSubmitInput,
+    EditButton,
+    ActionContainer
   } from './styled-components/Form'
-import NavBar from './NavBar'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 class EditContact extends Component {
     state = {
         name: '',
@@ -136,34 +140,44 @@ class EditContact extends Component {
                                         />
                                 </InputBoxContainer>
                             <RadioOptions>   
-                                <p>Relation:</p>                
-                                <input type="radio" id="choice1"
-                                name="relation" value="friend" onChange={this.handleChange}
-                                />
-                                <label htmlFor="contactChoice1">Friend</label>
+                                <RadioInputs>   
+                                <label htmlFor="relation">Relation: </label>          
+                                    <input type="radio" id="choice1"
+                                    name="relation" value="friend" onChange={this.handleChange}
+                                    />
+                                    <label htmlFor="contactChoice1">Friend</label>
 
-                                <input type="radio" id="choice2"
-                                name="relation" value="family" onChange={this.handleChange}/>
-                                <label htmlFor="contactChoice1">Family</label>
+                                    <input type="radio" id="choice2"
+                                    name="relation" value="family" onChange={this.handleChange}/>
+                                    <label htmlFor="contactChoice1">Family</label>
 
-                                <input type="radio" id="choice3"
-                                name="relation" value="date" onChange={this.handleChange}/>
-                                <label htmlFor="contactChoice1">Date</label>
+                                    <input type="radio" id="choice3"
+                                    name="relation" value="date" onChange={this.handleChange}/>
+                                    <label htmlFor="contactChoice1">Date</label>
 
-                                <input type="radio" id="choice4"
-                                name="relation" value="class" onChange={this.handleChange}/>
-                                <label htmlFor="contactChoice1">Class</label>
+                                    <input type="radio" id="choice4"
+                                    name="relation" value="class" onChange={this.handleChange}/>
+                                    <label htmlFor="contactChoice1">Class</label>
 
-                                <input type="radio" id="choice5"
-                                name="relation" value="job" onChange={this.handleChange}/>
-                                <label htmlFor="contactChoice1">Job</label>
+                                    <input type="radio" id="choice5"
+                                    name="relation" value="job" onChange={this.handleChange}/>
+                                    <label htmlFor="contactChoice1">Job</label>
 
-                                <input type="radio" id="choice6"
-                                name="relation" value="network" onChange={this.handleChange}/>
-                                <label htmlFor="contactChoice2">Network</label>
+                                    <input type="radio" id="choice6"
+                                    name="relation" value="network" onChange={this.handleChange}/>
+                                    <label htmlFor="contactChoice2">Network</label>
+                                </RadioInputs>
+                                <ActionContainer>
+                                <EditButton>
+                                    <PersonImage src='https://i.imgur.com/n1qkgYk.png'/>
+                                    <EditSubmitInput className="input-button" type="submit" value="Edit Contact" />
+                                </EditButton>
+                                <EditButton>
+                                    <Link to='/contacts'>Cancel</Link>
+                                </EditButton>
+                                </ActionContainer>
                             </RadioOptions>
                             </FormInputBody>
-                            <UserFormButton className="input-button" type="submit" value="Add Contact" />
                     </EditFormBody> 
             </LoginWrapper>
             </Container>

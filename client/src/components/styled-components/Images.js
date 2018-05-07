@@ -61,3 +61,7 @@ export const CrudImage = styled.img`
 export const SearchIcon = CrudImage.extend`
 
 `
+export const PersonImage = styled.img`
+    width: 30px;
+    height: 30px;
+`

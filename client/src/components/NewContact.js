@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
+import { PersonImage } from './styled-components/Images'
 import {
     Container,
     LoginWrapper,
@@ -10,9 +11,13 @@ import {
     UserFormButton,
     RadioOptions,
     FormInputBody,
-    InputBoxContainer
+    InputBoxContainer,
+    RadioInputs,
+    EditSubmitInput,
+    EditButton,
+    ActionContainer
   } from './styled-components/Form'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 class NewContact extends Component {
     state = {
         name: '',
@@ -137,7 +142,8 @@ class NewContact extends Component {
                                 </InputBoxContainer>
                                 
                                 <RadioOptions>
-                                        <p>Relation: </p>
+                                <RadioInputs>    
+                                <label htmlFor="relation">Relation: </label>
                                         <input
                                             type="radio"
                                             id="choice"
@@ -193,9 +199,18 @@ class NewContact extends Component {
                                             value="other" 
                                             onChange={this.handleChange} />
                                         <label htmlFor="contactChoice3">Other</label>
+                                        </RadioInputs>
+                                    <ActionContainer>
+                                            <EditButton>
+                                                <PersonImage src='https://i.imgur.com/qILBXRj.png'/>
+                                                <EditSubmitInput className="input-button" type="submit" value="Add Contact" />
+                                            </EditButton>
+                                            <EditButton>
+                                                <Link to='/contacts'>Cancel</Link>
+                                            </EditButton>
+                                    </ActionContainer>
                                 </RadioOptions>
                             </FormInputBody>
-                            <UserFormButton className="input-button" type="submit" value="Add Contact" />
                     </UserFormBody> 
                 </LoginWrapper>
             </Container>

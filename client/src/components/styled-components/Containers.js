@@ -103,6 +103,12 @@ export const Friend = SortButton.extend`
         background-size: 30px;
         background-repeat: no-repeat;
         background-position: center;
+        &:click{
+            background-color: #FF00AB;
+            // background-size: 30px;
+            // background-repeat: no-repeat;
+            // background-position: center;
+        }
     }
 `
 export const All = Friend.extend`
@@ -113,6 +119,9 @@ export const All = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/ghIgSXT.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/ghIgSXT.png');
+        }
     }
 `
 export const Family = Friend.extend`
@@ -123,6 +132,9 @@ export const Family = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/Yxax28b.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/Yxax28b.png');
+        }
     }
 `
 export const Date = Friend.extend`
@@ -133,6 +145,9 @@ export const Date = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/nFkkNx4.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/nFkkNx4.png');
+        }
     }
 `
 export const Class = Friend.extend`
@@ -144,6 +159,9 @@ export const Class = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/snUj9lK.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/snUj9lK.png');
+        }
     }
 `
 export const Job = Friend.extend`
@@ -154,6 +172,9 @@ export const Job = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/Xy5vIPx.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/Xy5vIPx.png');
+        }
     }
 `
 export const Network = Friend.extend`
@@ -164,6 +185,9 @@ export const Network = Friend.extend`
     }
     @media only screen and (max-width: 500px){
         background-image: url('https://i.imgur.com/XBAFu5Z.png');
+        &:hover{
+            background-image: url('https://i.imgur.com/XBAFu5Z.png');
+        }
     }
 `
 
