@@ -264,9 +264,28 @@ export const Button = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
+    border-radius: 4px;
+    font-size: 1.5em;
+    &:hover{
+        background-color: white;
+        border: 3px solid pink;
+        a {
+            color: pink;
+        }
+    }
     a {
         text-decoration: none;
         color: white;
+    }
+    
+`
+export const LeftButton = Button.extend`
+    &:hover{
+        background-color: white;
+        border: 3px solid #62B4FF;
+        a {
+            color: #62B4FF;
+        }
     }
 `
 

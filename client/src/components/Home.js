@@ -1,7 +1,12 @@
 import React from 'react'
 import NavBar from './NavBar'
 import { Link } from 'react-router-dom'
-import { HomeContainer, SquaresContainer, RightDiv, LeftDiv, Button } from './styled-components/Containers'
+import { HomeContainer, 
+         SquaresContainer, 
+         RightDiv, 
+         LeftDiv, 
+         Button,
+         LeftButton } from './styled-components/Containers'
 import { InfoText } from './styled-components/Text' 
 
 const Home = () => {
@@ -15,7 +20,7 @@ const Home = () => {
                     </RightDiv>
                     <LeftDiv>
                         <InfoText>See Friends Make calls Send messages Welcome back. Mesh. Login!</InfoText>
-                        <Button><Link to="/login_user">Login</Link></Button>
+                        <LeftButton><Link to="/login_user">Login</Link></LeftButton>
                     </LeftDiv>
                 </SquaresContainer>
             </HomeContainer>
