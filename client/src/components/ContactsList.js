@@ -16,7 +16,7 @@ class ContactsList extends Component {
         showMenu: true
     }
     componentWillMount() {
-        this.props.getContacts()
+        this.props.getContacts(this.props.currentUser.id)
     }
 
     handleChange = (event) => {

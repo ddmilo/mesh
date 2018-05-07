@@ -7,10 +7,14 @@ import { Form,
          FormInput, 
          FormButton } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
-class Login extends Component {
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
+import { loginUser } from '../actions/thunk.actions.js'
+class LoginUser extends Component {
     state = {
         username: '',
-        password: ''
+        password: '',
+        loggedIn: false
     }
 
     handleChange = (event) => {
@@ -19,11 +23,13 @@ class Login extends Component {
     }
     handleLogin = (event) => {
       event.preventDefault()
-      this.props.loginUser(this.state.username)
+      this.props.loginUser(this.state.username, this.state.loggedIn)
+      this.setState({loggedIn: true})
     }
 
     render(){
-      if(this.props.loggedIn === true){
+        console.log(this.state.loggedIn)
+      if(this.state.loggedIn === true){
         return(
           <Redirect to="/contacts" />
         )
@@ -56,4 +62,14 @@ class Login extends Component {
     }
 }
 
-export default Login
+const mapStateToProps = (state) => {
+    return { currentUser: state.currentUser }
+}
+
+//does this have anything to do with map function?
+export default connect(mapStateToProps, { push, loginUser })(LoginUser)
+//the parameters above are the actions being called
+//monad in JS, you can call a function and if it returns a function, you can immediately invoke the function that it 
+//returns and UserPage is the parameter of the function that is returned
+//recursion is when you call a function inside itself
+//polymorphism is when you have a class (inside itself?)
