@@ -6,11 +6,9 @@ import {ConnectedRouter} from 'react-router-redux'
 import createHistory from 'history/createBrowserHistory'
 import configureStore from './configureStore'
 
-import UserPage from './components/UserPage'
+import ContactsList from './components/ContactsList'
 import Home from './components/Home'
-import UserForm from './components/UserForm'
-import UserShow from './components/UserShow'
-import NavBar from './components/NavBar'
+// import LoginUser from './components/LoginUser'
 
 
 const history = createHistory()
@@ -21,11 +19,9 @@ const Root = () => (
   <Provider store={store}>
     <ConnectedRouter history={history}>
       <div>
-      <Route exact path="/nav" component={NavBar} />
-      {/* <Route exact path="/" component={Home} />
-      <Route exact path="/users" component={UserPage} />
-      <Route exact path="/new-user" component={UserForm} />
-      <Route path='/users/:userId' component={UserShow} /> */}
+      <Route exact path="/" component={Home} />
+       <Route exact path="/contacts" component={ContactsList} />
+      {/* <Route exact path="/login_user" component={LoginUser} /> */}
       </div>
     </ConnectedRouter>
   </Provider>
