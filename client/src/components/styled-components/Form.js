@@ -102,18 +102,3 @@ export const RadioButtons = styled.input`
         width: 25px;
     }
 `
-
-export default { 
-                Form, 
-                Container, 
-                FormWrapper, 
-                FormBody, 
-                FormInput, 
-                FormButton, 
-                SignUpButton, 
-                SignUpFormWrapper, 
-                NewContactFormBody, 
-                NewContactInput, 
-                RadioOptions,
-                RadioButtons
- }

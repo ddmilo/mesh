@@ -185,9 +185,18 @@ export const SquaresContainer = styled.div `
         position: static;
     }
     @media only screen and (max-width: 500px;){
-        height: 200vh;
+        height: 50vh;
     }
 
+`
+export const HomeContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 200vh;
+    @media only screen and (max-width: 500px){
+        height: 100vh;
+    }
 `
 export const RightDiv = styled.div`
     display: flex;
@@ -202,14 +211,19 @@ export const RightDiv = styled.div`
     top: 10vh;
     right: 25vw;
     color: white;
+    background-image: url('https://i.imgur.com/lzv1ja8.png');
+    background-size: 150px;
+    background-repeat: no-repeat;
+    background-position: 10% 60%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     @media only screen and (max-width: 1199px){
         position: static;
         top: none;
         right: none;
         width: 100vw;
     }
-    @media only screen and (max-width: 500px;){
-        height: 100vh;
+    @media only screen and (max-width: 500px){
+        height: 50vh;
     }
    
 `
@@ -227,16 +241,20 @@ export const LeftDiv = styled.div `
     top: 20vh;
     left: 10vw;
     color: white;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
     @media only screen and (max-width: 1199px){
         position: static;
         top: none;
         left: none;
         width: 100vw;
     }
-    @media only screen and (max-width: 500px;){
-        height: 100vh;
+    @media only screen and (max-width: 500px){
+        height: 50vh;
+        background-image: url('https://i.imgur.com/nFkkNx4.png');
+        background-size: 150px;
+        background-repeat: no-repeat;
+        background-position: 90% 30%;
     }
-   
 `
 export const Button = styled.div`
     width: 150px;
@@ -249,16 +267,6 @@ export const Button = styled.div`
     a {
         text-decoration: none;
         color: white;
-    }
-`
-
-export const HomeContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    width: 100vw;
-    height: 200vh;
-    @media only screen and (max-width: 500px;){
-        height: 200vh;
     }
 `
 
@@ -301,5 +309,5 @@ export const RequestContainer = styled.div`
     justify-content: flex-end;
 `
 export const SocialContainer = RequestContainer.extend`
-    
+
 `

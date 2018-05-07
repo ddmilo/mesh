@@ -10,6 +10,12 @@ export const MeshImage = styled.img`
         margin-right: 0px;
     }
 `
+
+export const MeshImageColor = styled.img`
+    width: 200px;
+    height: 60px;
+    margin-left: 10px;
+`
 export const ContactImage = styled.img`
     width: 50px;
     height: 50px;
@@ -55,13 +61,3 @@ export const CrudImage = styled.img`
 export const SearchIcon = CrudImage.extend`
 
 `
-
-export default { MeshImage,
-                 SocialImage,
-                 ContactImage,
-                 NewContactImage,
-                 CrudImage,
-                 MenuImage,
-                 MenuImageContainer,
-                 SearchIcon
-                }
