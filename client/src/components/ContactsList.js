@@ -6,6 +6,9 @@ import { ContactsContainer, ContactsWrapper, ContactsBodyWrapper, ProfileDiv } f
 import { NavBarWrapper, SearchBar, SearchBarContainer } from './styled-components/NavBar'
 import { MeshImage, MenuImage, MenuImageContainer, SearchIcon, ProfileImage } from './styled-components/Images'
 import { Link, Redirect } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { push } from 'react-router-redux'
+import { getContacts } from '../actions/thunk.actions.js'
 
 class ContactsList extends Component {
     state = {
@@ -83,4 +86,15 @@ class ContactsList extends Component {
         )
     }
 }
-export default ContactsList
+
+const mapStateToProps = (state) => {
+    return { contacts: state.contacts }
+}
+
+//does this have anything to do with map function?
+export default connect(mapStateToProps, { push, getContacts })(ContactsList)
+//the parameters above are the actions being called
+//monad in JS, you can call a function and if it returns a function, you can immediately invoke the function that it 
+//returns and UserPage is the parameter of the function that is returned
+//recursion is when you call a function inside itself
+//polymorphism is when you have a class (inside itself?)
