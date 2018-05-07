@@ -284,6 +284,10 @@ export const LeftDiv = styled.div `
         top: none;
         left: none;
         width: 100vw;
+        background-image: url('https://i.imgur.com/nFkkNx4.png');
+        background-size: 150px;
+        background-repeat: no-repeat;
+        background-position: 80% 25%;
     }
     @media only screen and (max-width: 500px){
         height: 50vh;
