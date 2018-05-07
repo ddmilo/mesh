@@ -167,7 +167,6 @@ class EditContact extends Component {
                                 </RadioInputs>
                                 <ActionContainer>
                                 <EditButton>
-                                    <PersonImage src='https://i.imgur.com/n1qkgYk.png'/>
                                     <EditSubmitInput className="input-button" type="submit" value="Edit Contact" />
                                 </EditButton>
                                 <EditButton>

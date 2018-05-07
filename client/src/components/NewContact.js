@@ -199,7 +199,6 @@ class NewContact extends Component {
                                         </RadioInputs>
                                     <ActionContainer>
                                             <EditButton>
-                                                <PersonImage src='https://i.imgur.com/qILBXRj.png'/>
                                                 <EditSubmitInput className="input-button" type="submit" value="Add Contact" />
                                             </EditButton>
                                             <EditButton>
