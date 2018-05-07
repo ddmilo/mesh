@@ -11,6 +11,8 @@
   "dependencies": {
     "react-alert": "^4.0.2",
     "react-custom-radio": "^1.0.7",
-    "react-radio-group": "^3.0.3"
+    "react-radio-group": "^3.0.3",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0"
   }
 }
