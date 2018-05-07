@@ -16,15 +16,14 @@ const Home = () => {
                 <NavBar />
                 <SquaresContainer>
                     <RightDiv>
-                        <InfoText>Keep in Touch. Organize Contacts. Call and Message. Mesh. Sign Up Today!</InfoText>
+                        <InfoText>Keep in Touch. <br/>Organize Contacts.<br/> Make calls.<br/> Mesh. <br/>Sign Up Today!</InfoText>
                         <Button><Link to="/signup">Sign Up</Link></Button>
                     </RightDiv>
                     <LeftDiv>
-                        <InfoText>See Friends Make calls Send messages Welcome back. Mesh. Login!</InfoText>
+                        <InfoText>See Friends. <br/> Make calls. <br/> Send messages. <br/> Welcome back. <br/> Mesh. <br/>Login!</InfoText>
                         <LeftButton><Link to="/login_user">Login</Link></LeftButton>
                     </LeftDiv>
                 </SquaresContainer>
-                <SplashImageDiv />
             </HomeContainer>
         )
 }
