@@ -7,7 +7,7 @@ export const Container = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     background-color: #ECEAEA;
 `
 
@@ -24,7 +24,7 @@ export const ContactsWrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     background-color: #ECEAEA;
     display: flex;
     justify-content: space-around;
@@ -45,7 +45,7 @@ export const ContactContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     font-size: 1.25em;
 `
 
@@ -70,7 +70,7 @@ export const SortButton = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     font-size: 30px;
     border-bottom: 2px solid #D8D8D8;
     padding-left: 10px;
@@ -198,6 +198,19 @@ export const HomeContainer = styled.div`
         height: 100vh;
     }
 `
+export const SplashImageDiv = styled.img `
+    width: 100vw;
+    height: 80vh;
+    background: url("https://i.imgur.com/ozYM36S.jpg");
+    background-size: cover;
+    background-position: bottom; 
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+   
+`
 export const RightDiv = styled.div`
     display: flex;
     flex-direction: column;
@@ -209,7 +222,7 @@ export const RightDiv = styled.div`
     z-index: 4;
     background: #FF00AB;
     top: 10vh;
-    right: 25vw;
+    right: 18vw;
     color: white;
     background-image: url('https://i.imgur.com/lzv1ja8.png');
     background-size: 150px;
@@ -239,7 +252,7 @@ export const LeftDiv = styled.div `
     z-index: 3;
     background: #0085FF;
     top: 20vh;
-    left: 10vw;
+    left: 18vw;
     color: white;
     box-shadow: 0 0 10px rgba(0,0,0,0.5);
     @media only screen and (max-width: 1199px){

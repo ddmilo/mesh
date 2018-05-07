@@ -1,13 +1,17 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
-import { Form, 
-         Container, 
-         FormWrapper, 
-         NewContactFormBody, 
-         NewContactInput, 
-         SignUpButton, 
-         RadioOptions
-         } from './styled-components/Form'
+import {
+    Container,
+    LoginWrapper,
+    UserFormHeader,
+    UserFormBody,
+    GlobalFormInputButton,
+    UserFormInput,
+    UserFormButton,
+    RadioOptions,
+    FormInputBody,
+    InputBoxContainer
+  } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
 class NewContact extends Component {
     state = {
@@ -59,140 +63,141 @@ class NewContact extends Component {
         return (
             <Container>
                 <NavBar />
-                <FormWrapper>
-                    <p>Add New Contact!</p>
-                    <NewContactFormBody>
-                        <Form onSubmit={this.newContact}>
-                            <NewContactInput
-                                type="string"
-                                name="name"
-                                placeholder="Name"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="username"
-                                placeholder="Username"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="image"
-                                placeholder="Profile Image"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="phone"
-                                placeholder="Phone Number"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="email"
-                                placeholder="Email"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="twitter"
-                                placeholder="Twitter Handle"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="instagram"
-                                placeholder="Instagram Handle"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="facebook"
-                                placeholder="Facebook Handle"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="street"
-                                placeholder="Street Address"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="city"
-                                placeholder="City"
-                                onChange={this.handleChange}
-                            />
-                            <NewContactInput
-                                type="string"
-                                name="zip"
-                                placeholder="Zipcode"
-                                onChange={this.handleChange}
-                            />
-                            <RadioOptions>
-                                    <p>Contact Type: </p>
-                                    <input
-                                        type="radio"
-                                        id="choice"
-                                        name="relation"
-                                        value="friend" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice1">Friend</label>
+                 <LoginWrapper>
+                        <UserFormBody onSubmit={this.newContact}>
+                            <FormInputBody>
+                                <p>Enter New Contact Information:</p>
+                                <InputBoxContainer>
+                                    <UserFormInput
+                                        type="string"
+                                        name="name"
+                                        placeholder="Name"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="username"
+                                        placeholder="Username"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="image"
+                                        placeholder="Profile Image"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="phone"
+                                        placeholder="Phone Number"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="email"
+                                        placeholder="Email"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="twitter"
+                                        placeholder="Twitter Handle"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="instagram"
+                                        placeholder="Instagram Handle"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="facebook"
+                                        placeholder="Facebook Handle"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="street"
+                                        placeholder="Street Address"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="city"
+                                        placeholder="City"
+                                        onChange={this.handleChange}
+                                    />
+                                    <UserFormInput
+                                        type="string"
+                                        name="zip"
+                                        placeholder="Zipcode"
+                                        onChange={this.handleChange}
+                                    />
+                                </InputBoxContainer>
+                                
+                                <RadioOptions>
+                                        <p>Relation: </p>
+                                        <input
+                                            type="radio"
+                                            id="choice"
+                                            name="relation"
+                                            value="friend" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice1">Friend</label>
 
-                                    <input
-                                        type="radio"
-                                        id="choice"
-                                        name="relation"
-                                        value="family" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice1">Family</label>
+                                        <input
+                                            type="radio"
+                                            id="choice"
+                                            name="relation"
+                                            value="family" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice1">Family</label>
 
-                                    <input
-                                        type="radio" 
-                                        id="choice"
-                                        name="relation" 
-                                        value="date" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice1">Date</label>
+                                        <input
+                                            type="radio" 
+                                            id="choice"
+                                            name="relation" 
+                                            value="date" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice1">Date</label>
 
-                                    <input 
-                                        type="radio" 
-                                        id="choice"
-                                        name="relation" 
-                                        value="class" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice1">Class</label>
+                                        <input 
+                                            type="radio" 
+                                            id="choice"
+                                            name="relation" 
+                                            value="class" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice1">Class</label>
 
-                                    <input
-                                        type="radio" 
-                                        id="choice"
-                                        name="relation" 
-                                        value="job" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice1">Job</label>
+                                        <input
+                                            type="radio" 
+                                            id="choice"
+                                            name="relation" 
+                                            value="job" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice1">Job</label>
 
-                                    <input 
-                                        type="radio" 
-                                        id="choice"
-                                        name="relation" 
-                                        value="network" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice2">Network</label>
+                                        <input 
+                                            type="radio" 
+                                            id="choice"
+                                            name="relation" 
+                                            value="network" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice2">Network</label>
 
-                                    <input 
-                                        type="radio" 
-                                        id="choice"
-                                        name="relation" 
-                                        value="other" 
-                                        onChange={this.handleChange} />
-                                    <label htmlFor="contactChoice3">Other</label>
-                            </RadioOptions>
-                            <RadioOptions>
-                                <input className="input-button" type="submit" value="Add Contact" />
-                            </RadioOptions>
-                        </Form>
-                    </NewContactFormBody>
-                </FormWrapper>
+                                        <input 
+                                            type="radio" 
+                                            id="choice"
+                                            name="relation" 
+                                            value="other" 
+                                            onChange={this.handleChange} />
+                                        <label htmlFor="contactChoice3">Other</label>
+                                </RadioOptions>
+                            </FormInputBody>
+                            <UserFormButton className="input-button" type="submit" value="Add Contact" />
+                    </UserFormBody> 
+                </LoginWrapper>
             </Container>
         )
     }

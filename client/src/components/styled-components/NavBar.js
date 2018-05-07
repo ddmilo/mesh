@@ -26,7 +26,7 @@ export const SearchBar = styled.input`
     padding: 5px;
     border-radius: 4px;
     font-size: 1.5em;
-    font-family: 'Raleway';
+    font-family: 'Raleway', sans-serif;
     color: white;
     @media only screen and (max-width: 500px){
         width: 30vw;

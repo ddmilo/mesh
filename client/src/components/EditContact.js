@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
-import { Form, 
-    Container, 
-    FormWrapper, 
-    EditContactFormBody, 
-    NewContactInput, 
-    SignUpButton, 
-    RadioOptions
-    } from './styled-components/Form'
+import {
+    Container,
+    LoginWrapper,
+    UserFormHeader,
+    EditFormBody,
+    GlobalFormInputButton,
+    EditFormInput,
+    UserFormButton,
+    RadioOptions,
+    FormInputBody,
+    InputBoxContainer
+  } from './styled-components/Form'
 import NavBar from './NavBar'
 import { Redirect } from 'react-router-dom'
 class EditContact extends Component {
@@ -59,78 +63,80 @@ class EditContact extends Component {
         return(
             <Container>
                 <NavBar />
-                <FormWrapper>
-                    <p>Edit {this.props.currentContact.name}</p>
-                    <EditContactFormBody>
-                        <Form onSubmit={this.editContact}>
-                            <input 
-                                type="string"
-                                name="name"
-                                placeholder={this.props.currentContact.name}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="username"
-                                placeholder={this.props.currentContact.username}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="image"
-                                placeholder={this.props.currentContact.phone}
-                                onChange={this.handleChange}
-                                />
-                                <input 
-                                type="string"
-                                name="phone"
-                                placeholder={this.props.currentContact.phone}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="email"
-                                placeholder={this.props.currentContact.email}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="twitter"
-                                placeholder={this.props.currentContact.twitter}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="instagram"
-                                placeholder={this.props.currentContact.instagram}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="facebook"
-                                placeholder={this.props.currentContact.facebook}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="street"
-                                placeholder={this.props.currentContact.street}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="city"
-                                placeholder={this.props.currentContact.city}
-                                onChange={this.handleChange}
-                                />
-                            <input 
-                                type="string"
-                                name="zip"
-                                placeholder={this.props.currentContact.zip}
-                                onChange={this.handleChange}
-                                />
-                                <p>Please select your preferred contact method:</p>
-                            <div>                   
+                    <LoginWrapper>
+                        <EditFormBody onSubmit={this.editContact}>
+                            <FormInputBody>
+                            <p>Edit {this.props.currentContact.name}</p>
+                                <InputBoxContainer>
+                                    <EditFormInput 
+                                        type="string"
+                                        name="name"
+                                        placeholder={this.props.currentContact.name}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="username"
+                                        placeholder={this.props.currentContact.username}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="image"
+                                        placeholder={this.props.currentContact.phone}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="phone"
+                                        placeholder={this.props.currentContact.phone}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="email"
+                                        placeholder={this.props.currentContact.email}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="twitter"
+                                        placeholder={this.props.currentContact.twitter}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="instagram"
+                                        placeholder={this.props.currentContact.instagram}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="facebook"
+                                        placeholder={this.props.currentContact.facebook}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="street"
+                                        placeholder={this.props.currentContact.street}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="city"
+                                        placeholder={this.props.currentContact.city}
+                                        onChange={this.handleChange}
+                                        />
+                                    <EditFormInput 
+                                        type="string"
+                                        name="zip"
+                                        placeholder={this.props.currentContact.zip}
+                                        onChange={this.handleChange}
+                                        />
+                                </InputBoxContainer>
+                            <RadioOptions>   
+                                <p>Relation:</p>                
                                 <input type="radio" id="choice1"
                                 name="relation" value="friend" onChange={this.handleChange}
                                 />
@@ -155,11 +161,11 @@ class EditContact extends Component {
                                 <input type="radio" id="choice6"
                                 name="relation" value="network" onChange={this.handleChange}/>
                                 <label htmlFor="contactChoice2">Network</label>
-                            </div>
-                            <input className="input-button" type="submit" value="Add Contact" />
-                    </Form> 
-                </EditContactFormBody>
-        </FormWrapper>
+                            </RadioOptions>
+                            </FormInputBody>
+                            <UserFormButton className="input-button" type="submit" value="Add Contact" />
+                    </EditFormBody> 
+            </LoginWrapper>
             </Container>
         )
     }

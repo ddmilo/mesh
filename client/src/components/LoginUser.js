@@ -1,6 +1,11 @@
 import React, { Component } from 'react'
 import NavBar from './NavBar'
-import { Form, Container, FormWrapper, FormBody, FormInput, FormButton } from './styled-components/Form'
+import { Form, 
+         Container, 
+         FormWrapper, 
+         FormBody, 
+         FormInput, 
+         FormButton } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
 class Login extends Component {
     state = {

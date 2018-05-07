@@ -6,7 +6,8 @@ import { HomeContainer,
          RightDiv, 
          LeftDiv, 
          Button,
-         LeftButton } from './styled-components/Containers'
+         LeftButton,
+         SplashImageDiv } from './styled-components/Containers'
 import { InfoText } from './styled-components/Text' 
 
 const Home = () => {
@@ -23,6 +24,7 @@ const Home = () => {
                         <LeftButton><Link to="/login_user">Login</Link></LeftButton>
                     </LeftDiv>
                 </SquaresContainer>
+                <SplashImageDiv />
             </HomeContainer>
         )
 }
