@@ -6,8 +6,7 @@ import { HomeContainer,
          RightDiv, 
          LeftDiv, 
          Button,
-         LeftButton,
-         SplashImageDiv } from './styled-components/Containers'
+         LeftButton} from './styled-components/Containers'
 import { InfoText } from './styled-components/Text' 
 
 const Home = () => {

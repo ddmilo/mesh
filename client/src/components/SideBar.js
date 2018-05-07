@@ -1,6 +1,5 @@
 import React from 'react'
 import { SideBarContainer, 
-         SortButton, 
          All, 
          Family, 
          Friend,

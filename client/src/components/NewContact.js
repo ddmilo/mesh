@@ -4,11 +4,8 @@ import { PersonImage } from './styled-components/Images'
 import {
     Container,
     LoginWrapper,
-    UserFormHeader,
     UserFormBody,
-    GlobalFormInputButton,
     UserFormInput,
-    UserFormButton,
     RadioOptions,
     FormInputBody,
     InputBoxContainer,
