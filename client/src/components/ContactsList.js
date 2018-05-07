@@ -34,12 +34,12 @@ class ContactsList extends Component {
     }
 
     render() {
-        // if (this.props.loggedIn === false){
-        //     alert("Log in to view your contacts")
-        //     return(
-        //         <Redirect to='/' />
-        //     )
-        // }
+        if (this.props.loggedIn === false){
+            alert("Log in to view your contacts")
+            return(
+                <Redirect to='/' />
+            )
+        }
         const orderedContacts = this.props.contacts.sort((a, b) => (a.name > b.name ? 1 : -1))
         const searchedContacts = orderedContacts.filter((contact)=>{
             if ((contact.name.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1) || (contact.relation.toLowerCase().indexOf(this.state.search.toLowerCase()) !== -1)){
