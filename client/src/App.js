@@ -64,6 +64,7 @@ class App extends Component {
 }
   newContact = async(contactInfo) => {
     try{
+      console.log('Clicked')
       const user_id = this.state.currentUser.id
       const response = await axios.post(`/api/users/${user_id}/contacts`, contactInfo)
       console.log(response)

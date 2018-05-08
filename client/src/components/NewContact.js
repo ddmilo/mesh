@@ -33,6 +33,7 @@ class NewContact extends Component {
 
     newContact = (event) => {
         event.preventDefault()
+        console.log("called")
         const contactInfo = {
             user_id: this.props.userId,
             name: this.state.name,
@@ -136,10 +137,10 @@ class NewContact extends Component {
                                         placeholder="Zipcode"
                                         onChange={this.handleChange}
                                     />
-                                </InputBoxContainer>
-                                
+                                </InputBoxContainer>    
                                 <RadioOptions>
                                 <RadioInputs>    
+                                    <div>
                                 <label htmlFor="relation">Relation: </label>
                                         <input
                                             type="radio"
@@ -172,7 +173,8 @@ class NewContact extends Component {
                                             value="class" 
                                             onChange={this.handleChange} />
                                         <label htmlFor="contactChoice1">Class</label>
-
+                                    </div>
+                                    <div>
                                         <input
                                             type="radio" 
                                             id="choice"
@@ -196,14 +198,15 @@ class NewContact extends Component {
                                             value="other" 
                                             onChange={this.handleChange} />
                                         <label htmlFor="contactChoice3">Other</label>
+                                        </div>
                                         </RadioInputs>
                                     <ActionContainer>
-                                            <EditButton>
-                                                <EditSubmitInput className="input-button" type="submit" value="Add Contact" />
-                                            </EditButton>
-                                            <EditButton>
+                                            <EditButton> 
+                                                <EditSubmitInput className="input-button" type="submit" value="Add Contact" /> 
+                                             </EditButton>
+                                            <EditButton> 
                                                 <Link to='/contacts'>Cancel</Link>
-                                            </EditButton>
+                                             </EditButton>
                                     </ActionContainer>
                                 </RadioOptions>
                             </FormInputBody>

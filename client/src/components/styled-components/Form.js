@@ -93,6 +93,7 @@ export const RadioOptions = styled.div`
         padding: 0;
         margin: 0;
     }
+   
 `
 
 export const LoginWrapper = styled.div`
@@ -108,7 +109,7 @@ export const LoginWrapper = styled.div`
 
 `
 
-export const UserFormBody = styled.div`
+export const UserFormBody = styled.form`
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -127,13 +128,16 @@ export const UserFormBody = styled.div`
         padding: 0;
     }
     @media only screen and (max-width: 1000px){
-    width: 45vw;
+    width: 80vw;
+    }
+    @media only screen and (max-width: 881px){
+    width: 85vw;
+    }
+    @media only screen and (max-width: 850px){
+        width: 80%;
     }
     @media only screen and (max-width: 800px){
-    width: 50vw;
-    }
-    @media only screen and (max-width: 600px){
-    width: 80%;
+        width: 95vw;
     }
     @media only screen and (max-width: 500px){
         height: 90vh;
@@ -205,11 +209,15 @@ export const UserFormButton = styled.div`
 export const RadioInputs = styled.div`
     display: flex;
     justify-content: space-around;
-    width: 45vw;
-    margin-left: 10px;
-    @media only screen and (max-width: 500px){
-        font-size: .95em;
-        margin-left: 18px;
+    width: 100%;
+    @media only screen and (max-width: 800px){
+        flex-direction: column;
+        p {
+            color: white;
+            font-size: .75em;
+            padding: 0;
+            margin: 0;
+        }
     }
 `
 
