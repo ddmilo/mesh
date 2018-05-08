@@ -247,3 +247,14 @@ export const ActionContainer = styled.div`
         color: white;
     }
 `
+export const PassWordMaskDiv = styled.div`
+    width: 300px;
+    height: 30px;
+    background-color: #F4F3F3;
+    border: 0;
+    padding: 5px;
+    margin: 10px;
+    font-size: 1.5em;
+    font-family: 'Raleway';
+
+`

@@ -5,8 +5,10 @@ import { Form,
          FormWrapper, 
          FormBody, 
          FormInput, 
-         FormButton } from './styled-components/Form'
+         FormButton,
+         PassWordMaskDiv } from './styled-components/Form'
 import { Redirect } from 'react-router-dom'
+
 class Login extends Component {
     state = {
         username: '',
@@ -38,10 +40,10 @@ class Login extends Component {
                         <FormInput
                             type="string"
                             name="username"
-                            placeholder="Email"
+                            placeholder="Username"
                             onChange={this.handleChange}
                             />
-                        <FormInput 
+                        <FormInput
                             type="string"
                             name="password"
                             placeholder="Password"

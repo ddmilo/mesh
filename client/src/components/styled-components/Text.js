@@ -10,4 +10,5 @@ export const InfoText = styled.div`
         font-size: 1.5em;
     }
 `
+
 export default { InfoText }
