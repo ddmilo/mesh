@@ -19,7 +19,7 @@ class SignUp extends Component {
             name: this.state.name,
             username: this.state.username, 
             phone: this.state.phone,
-            image: this.state.password_confirmation,
+            image: this.state.image,
             email: this.state.email, 
             password: this.state.password
         }
