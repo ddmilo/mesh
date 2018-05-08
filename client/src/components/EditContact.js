@@ -28,7 +28,8 @@ class EditContact extends Component {
         email: '',
         street: '',
         city: '',
-        zip: ''
+        zip: '',
+        redirect: false
     }
 
     editContact = (event) => {
@@ -49,6 +50,7 @@ class EditContact extends Component {
             zip: this.state.zip
         }
         this.props.updateContact(contactInfo)
+        this.setState({redirect: true})
     }
 
     handleChange = (event) => {
@@ -57,7 +59,7 @@ class EditContact extends Component {
     }
 
     render(){
-        if(this.props.redirect === true){
+        if(this.state.redirect === true){
             return(
               <Redirect to="/contacts" />
             )
